@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="NowShowingCollectionViewCell" customModule="MovieBookingApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="201" height="285"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="201" height="285"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tcm-bI-4fq">
+                        <rect key="frame" x="0.0" y="0.0" width="201" height="285"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="8Gp-1g-nb6">
+                                <rect key="frame" x="0.0" y="0.0" width="201" height="285"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" image="In_From_the_Cold_Poster" translatesAutoresizingMaskIntoConstraints="NO" id="SRj-hX-f1k">
+                                        <rect key="frame" x="0.0" y="0.0" width="201" height="220"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="220" id="g4B-4z-aQk"/>
+                                        </constraints>
+                                        <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="TIW-xi-fOz">
+                                        <rect key="frame" x="0.0" y="236" width="201" height="49"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" text="In From The Cold" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="stG-AF-ZyS">
+                                                <rect key="frame" x="0.0" y="0.0" width="201" height="26.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Drama/Thriller · 8h 23m" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tz6-8o-rIO">
+                                                <rect key="frame" x="0.0" y="26.5" width="201" height="14.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                                <color key="textColor" name="movie_seat_taken_color"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="8" right="0.0"/>
+                                    </stackView>
+                                </subviews>
+                                <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="8Gp-1g-nb6" secondAttribute="bottom" id="aIC-2O-AYt"/>
+                            <constraint firstAttribute="trailing" secondItem="8Gp-1g-nb6" secondAttribute="trailing" id="eUz-yO-PQw"/>
+                            <constraint firstItem="8Gp-1g-nb6" firstAttribute="top" secondItem="Tcm-bI-4fq" secondAttribute="top" id="pqP-Dv-0lL"/>
+                            <constraint firstItem="8Gp-1g-nb6" firstAttribute="leading" secondItem="Tcm-bI-4fq" secondAttribute="leading" id="vtC-Ts-25c"/>
+                        </constraints>
+                        <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="Tcm-bI-4fq" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="8hI-h2-FN2"/>
+                <constraint firstAttribute="bottom" secondItem="Tcm-bI-4fq" secondAttribute="bottom" id="WEo-eY-BBX"/>
+                <constraint firstItem="Tcm-bI-4fq" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="diB-3i-qDG"/>
+                <constraint firstAttribute="trailing" secondItem="Tcm-bI-4fq" secondAttribute="trailing" id="mbM-Kk-Oxv"/>
+            </constraints>
+            <size key="customSize" width="201" height="285"/>
+            <connections>
+                <outlet property="imageMoviePoster" destination="SRj-hX-f1k" id="qPl-MV-AMm"/>
+            </connections>
+            <point key="canvasLocation" x="247.10144927536234" y="192.52232142857142"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="In_From_the_Cold_Poster" width="89" height="124.66666412353516"/>
+        <namedColor name="movie_seat_taken_color">
+            <color red="0.51800000667572021" green="0.5690000057220459" blue="0.68599998950958252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

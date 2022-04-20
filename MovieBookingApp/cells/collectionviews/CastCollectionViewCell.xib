@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CastCollectionViewCell" customModule="MovieBookingApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="166" height="160"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="166" height="160"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="margarita_levieva" translatesAutoresizingMaskIntoConstraints="NO" id="RDO-Ka-ghA">
+                        <rect key="frame" x="0.0" y="0.0" width="166" height="160"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="40"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="RDO-Ka-ghA" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Lrc-tb-Aqo"/>
+                <constraint firstItem="RDO-Ka-ghA" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="cop-a7-dJD"/>
+                <constraint firstAttribute="trailing" secondItem="RDO-Ka-ghA" secondAttribute="trailing" id="uEF-e8-DxR"/>
+                <constraint firstAttribute="bottom" secondItem="RDO-Ka-ghA" secondAttribute="bottom" id="xPp-Hx-Qgo"/>
+            </constraints>
+            <size key="customSize" width="166" height="160"/>
+            <connections>
+                <outlet property="image_caster" destination="RDO-Ka-ghA" id="uf4-3p-waf"/>
+            </connections>
+            <point key="canvasLocation" x="221.73913043478262" y="150.66964285714286"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="margarita_levieva" width="359" height="359"/>
+    </resources>
+</document>

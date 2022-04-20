@@ -1,0 +1,20 @@
+PODS:
+  - SideMenu (6.5.0)
+  - UPCarouselFlowLayout (1.1.2)
+
+DEPENDENCIES:
+  - SideMenu
+  - UPCarouselFlowLayout
+
+SPEC REPOS:
+  trunk:
+    - SideMenu
+    - UPCarouselFlowLayout
+
+SPEC CHECKSUMS:
+  SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
+  UPCarouselFlowLayout: 4c7d2c43a10ebb1597bde502a53699d378341dad
+
+PODFILE CHECKSUM: ea1f395a8b2fffa110a2c84c32c73cf0cb99d72d
+
+COCOAPODS: 1.11.2
