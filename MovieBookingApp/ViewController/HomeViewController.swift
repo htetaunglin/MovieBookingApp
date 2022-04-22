@@ -12,7 +12,12 @@ class HomeViewController: UIViewController{
     @IBOutlet weak var collectionViewNowShowing: UICollectionView!
     @IBOutlet weak var collectionViewComingSoon: UICollectionView!
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+//        navigationItem.lef
+//        navigationItem.backButtonTitle = ""
+//        navigationItem.hidesBackButton = true
+        navigationController?.setNavigationBarHidden(false, animated: false)
         registerCollectionViews()
         setUpDataSourceAndDelegate()
     }

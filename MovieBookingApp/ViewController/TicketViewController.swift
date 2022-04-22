@@ -33,8 +33,8 @@ class TicketViewController: UIViewController{
 //        stackViewTicket.layer.shouldRasterize = true
 //        stackViewTicket.layer.rasterizationScale = UIScreen.main.scale//scale ? UIScreen.main.scale : 1
     }
+
     
-  
     private func decorateImageMovie(){
         imageMovie.clipsToBounds = true
         imageMovie.layer.cornerRadius = 20

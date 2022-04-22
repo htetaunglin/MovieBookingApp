@@ -25,6 +25,9 @@ class MovieSeatViewController: UIViewController{
         collectionViewSeat.register(UINib(nibName: String(describing: MovieSeatCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing:  MovieSeatCollectionViewCell.self))
     }
     
+    @IBAction func onClickBuy(_ sender: Any) {
+        navigateToSnackViewController()
+    }
     @IBAction func back(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }

@@ -64,6 +64,10 @@ class MovieTimeViewController: UIViewController{
         self.view.layoutIfNeeded()
     }
     
+    @IBAction func onClickNext(_ sender: Any) {
+        navigateToMovieSeatViewController()
+    }
+    
     @IBAction func back(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }

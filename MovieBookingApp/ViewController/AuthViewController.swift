@@ -29,8 +29,9 @@ class AuthViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.modalPresentationStyle = .fullScreen
-//        self.modalTransitionStyle = .coverVertical
+        inputGroupName.isHidden = true
+        inputGroupPhone.isHidden = true
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
         setTextFieldBorder()
         decorateFacebookButton()
         setUpControlTab()
@@ -76,5 +77,9 @@ class AuthViewController: UIViewController{
             indicatorOfSignUp.backgroundColor = UIColor.init(named: "primary_color")
             lblSignUp.textColor = UIColor.init(named: "primary_color")
         }
+    }
+    
+    @IBAction func onClickConfirm(_ sender: Any) {
+        navigateToHomeController()
     }
 }

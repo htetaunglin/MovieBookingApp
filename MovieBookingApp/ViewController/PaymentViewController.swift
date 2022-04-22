@@ -33,6 +33,14 @@ class PaymentViewController: UIViewController{
         cardCarousel.collectionViewLayout = layout
     }
     
+    @IBAction func onClickAddNewCard(_ sender: Any) {
+        navigateToAddNewCardViewController()
+    }
+    
+    @IBAction func onClickConfirm(_ sender: Any) {
+        navigateToTicketViewController()
+    }
+    
     @IBAction func back(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }

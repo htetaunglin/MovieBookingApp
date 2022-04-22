@@ -38,9 +38,10 @@ class MovieDetailViewController: UIViewController{
         collectionViewCast.delegate = self
     }
     
-    @IBAction func back(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+    @IBAction func onClickGetYourTicket(_ sender: Any) {
+        navigateToMovieTimeViewController()
     }
+
 }
 
 extension MovieDetailViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{

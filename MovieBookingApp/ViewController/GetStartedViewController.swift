@@ -19,4 +19,7 @@ class GetStartedViewController : UIViewController{
         btnGetStart.layer.borderColor = UIColor.white.cgColor
         btnGetStart.layer.borderWidth = 1
     }
+    @IBAction func onClickGetStart(_ sender: Any) {
+        navigateToAuthController()
+    }
 }

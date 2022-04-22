@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class FoodViewController: UIViewController{
+class SnackViewController: UIViewController{
     @IBOutlet weak var comboSetTableView: UITableView!
     @IBOutlet weak var textFieldPromoCode: UITextField!
     @IBOutlet weak var paymentMethodTableView: UITableView!
@@ -30,6 +30,7 @@ class FoodViewController: UIViewController{
         comboSetTableView.dataSource = self
     }
     
+    
     private func registerPaymentMethodTableView(){
         paymentMethodTableView.registerForCell(identifier: PaymentMethodTableViewCell.identifier)
         paymentMethodTableView.dataSource = self
@@ -44,13 +45,17 @@ class FoodViewController: UIViewController{
         heightOfPaymentTableView.constant = CGFloat(count * 60)
     }
     
+    @IBAction func onClickPay(_ sender: Any) {
+        navigateToPaymentViewController()
+    }
+    
     @IBAction func back(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
 }
 
 
-extension FoodViewController: UITableViewDataSource{
+extension SnackViewController: UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         return count
     }

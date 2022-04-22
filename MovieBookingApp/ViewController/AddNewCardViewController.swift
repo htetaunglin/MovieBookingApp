@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class CardFromViewController: UIViewController{
+class AddNewCardViewController: UIViewController{
     
     @IBOutlet weak var textFieldCardNumber: UITextField!
     @IBOutlet weak var textFieldCardHolder: UITextField!
@@ -26,6 +26,11 @@ class CardFromViewController: UIViewController{
         textFieldExpireDate.addMyTextFieldStyle(insertPadding: true)
         textFieldCVC.addMyTextFieldStyle(insertPadding: true)
     }
+    
+    @IBAction func onClickAddNewTicket(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     @IBAction func back(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
