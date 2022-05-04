@@ -10,10 +10,11 @@ import UIKit
 class TimeCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var viewTime: UIView!
+    @IBOutlet weak var label: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-//        rgb(211,211,211)
         viewTime.layer.borderColor =  UIColor.gray.cgColor
         viewTime.layer.borderWidth = 0.5
     }

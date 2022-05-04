@@ -10,6 +10,7 @@ import UIKit
 class MovieTypeCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var viewMovieType: UIView!
+    @IBOutlet weak var lblGenreName: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

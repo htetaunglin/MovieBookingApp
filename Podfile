@@ -6,6 +6,9 @@ target 'MovieBookingApp' do
   use_frameworks!
 
   # Pods for MovieBookingApp
+  pod 'Wormholy', :configurations => ['Debug']
   pod 'SideMenu'
   pod 'UPCarouselFlowLayout'
+  pod 'Alamofire', '~> 5.5'
+  pod 'SDWebImage', '~> 5.0'
 end

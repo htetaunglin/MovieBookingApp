@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		950BBDFE568F5459239E191A /* Pods_MovieBookingApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 487A12831EEEAF5DCCC2B456 /* Pods_MovieBookingApp.framework */; };
+		9912E89B281BE57C00DB1D87 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9912E89A281BE57C00DB1D87 /* BaseResponse.swift */; };
+		9912E89D281BEBBB00DB1D87 /* CinemaResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9912E89C281BEBBB00DB1D87 /* CinemaResponse.swift */; };
 		9923183F27C356E00073E2DF /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9923183E27C356E00073E2DF /* UIView+Extension.swift */; };
 		9923184127C357020073E2DF /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9923184027C357020073E2DF /* UITextField+Extension.swift */; };
 		9923184327C3571E0073E2DF /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9923184227C3571E0073E2DF /* UIViewController+Extension.swift */; };
@@ -28,9 +30,12 @@
 		992CC6AE27BA236500D991A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 992CC6AC27BA236500D991A9 /* Main.storyboard */; };
 		992CC6B027BA236600D991A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 992CC6AF27BA236600D991A9 /* Assets.xcassets */; };
 		992CC6B327BA236600D991A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 992CC6B127BA236600D991A9 /* LaunchScreen.storyboard */; };
+		99353423281A659100CD1813 /* DrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99353422281A659100CD1813 /* DrawerViewController.swift */; };
 		9947512827CB46770018396D /* PayCardCarouselCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9947512627CB46770018396D /* PayCardCarouselCollectionViewCell.swift */; };
 		9947512927CB46770018396D /* PayCardCarouselCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9947512727CB46770018396D /* PayCardCarouselCollectionViewCell.xib */; };
 		9947512B27CB532B0018396D /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9947512A27CB532B0018396D /* UILabel+Extension.swift */; };
+		994AC27C281AE5A300EDAD57 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994AC27B281AE5A300EDAD57 /* MovieModel.swift */; };
+		994AC27E281AE64400EDAD57 /* MovieResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994AC27D281AE64400EDAD57 /* MovieResponse.swift */; };
 		9969FB1227BF5AA300946B7E /* DaysCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9969FB1027BF5AA300946B7E /* DaysCollectionViewCell.swift */; };
 		9969FB1327BF5AA300946B7E /* DaysCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9969FB1127BF5AA300946B7E /* DaysCollectionViewCell.xib */; };
 		9969FB1627BF604E00946B7E /* TimeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9969FB1427BF604E00946B7E /* TimeCollectionViewCell.swift */; };
@@ -53,11 +58,23 @@
 		99ACF15127C0C9C300DC3AFC /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ACF15027C0C9C300DC3AFC /* AppConstants.swift */; };
 		99ACF15427C0CA2400DC3AFC /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ACF15327C0CA2400DC3AFC /* DummyData.swift */; };
 		99BDBE8527BD5CF900AAF1A5 /* MovieTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BDBE8427BD5CF900AAF1A5 /* MovieTimeViewController.swift */; };
+		99E9CEAD2812F8A000794996 /* NetworkEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E9CEAC2812F8A000794996 /* NetworkEndPoint.swift */; };
+		99E9CEAF2812F8C200794996 /* NetworkAgentProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E9CEAE2812F8C200794996 /* NetworkAgentProtocols.swift */; };
+		99E9CEB22813C63800794996 /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E9CEB12813C63800794996 /* StringConstants.swift */; };
+		99E9CEB52813C96900794996 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E9CEB42813C96900794996 /* AuthResponse.swift */; };
+		99E9CEB72813C9B600794996 /* NetworkAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E9CEB62813C9B600794996 /* NetworkAgent.swift */; };
+		99E9CEBA2813E38500794996 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E9CEB92813E38500794996 /* UserModel.swift */; };
+		99E9CEBD2813E3A800794996 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E9CEBC2813E3A800794996 /* UserRepository.swift */; };
+		99E9CEC02813E41100794996 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E9CEBF2813E41100794996 /* BaseModel.swift */; };
+		99E9CEC22813E47100794996 /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E9CEC12813E47100794996 /* AuthModel.swift */; };
 		99F0285227C25008009F6256 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F0285127C25008009F6256 /* AuthViewController.swift */; };
+		99F9A9DB281D3B890092E6A3 /* CinemaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F9A9DA281D3B890092E6A3 /* CinemaModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		487A12831EEEAF5DCCC2B456 /* Pods_MovieBookingApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieBookingApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9912E89A281BE57C00DB1D87 /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
+		9912E89C281BEBBB00DB1D87 /* CinemaResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaResponse.swift; sourceTree = "<group>"; };
 		9923183E27C356E00073E2DF /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		9923184027C357020073E2DF /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		9923184227C3571E0073E2DF /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
@@ -80,9 +97,12 @@
 		992CC6AF27BA236600D991A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		992CC6B227BA236600D991A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		992CC6B427BA236600D991A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		99353422281A659100CD1813 /* DrawerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerViewController.swift; sourceTree = "<group>"; };
 		9947512627CB46770018396D /* PayCardCarouselCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayCardCarouselCollectionViewCell.swift; sourceTree = "<group>"; };
 		9947512727CB46770018396D /* PayCardCarouselCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PayCardCarouselCollectionViewCell.xib; sourceTree = "<group>"; };
 		9947512A27CB532B0018396D /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		994AC27B281AE5A300EDAD57 /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
+		994AC27D281AE64400EDAD57 /* MovieResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieResponse.swift; sourceTree = "<group>"; };
 		9969FB1027BF5AA300946B7E /* DaysCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysCollectionViewCell.swift; sourceTree = "<group>"; };
 		9969FB1127BF5AA300946B7E /* DaysCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DaysCollectionViewCell.xib; sourceTree = "<group>"; };
 		9969FB1427BF604E00946B7E /* TimeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -105,7 +125,17 @@
 		99ACF15027C0C9C300DC3AFC /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		99ACF15327C0CA2400DC3AFC /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
 		99BDBE8427BD5CF900AAF1A5 /* MovieTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTimeViewController.swift; sourceTree = "<group>"; };
+		99E9CEAC2812F8A000794996 /* NetworkEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEndPoint.swift; sourceTree = "<group>"; };
+		99E9CEAE2812F8C200794996 /* NetworkAgentProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAgentProtocols.swift; sourceTree = "<group>"; };
+		99E9CEB12813C63800794996 /* StringConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
+		99E9CEB42813C96900794996 /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
+		99E9CEB62813C9B600794996 /* NetworkAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAgent.swift; sourceTree = "<group>"; };
+		99E9CEB92813E38500794996 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		99E9CEBC2813E3A800794996 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		99E9CEBF2813E41100794996 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		99E9CEC12813E47100794996 /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
 		99F0285127C25008009F6256 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		99F9A9DA281D3B890092E6A3 /* CinemaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaModel.swift; sourceTree = "<group>"; };
 		D83BB0939584A5A8E0B37ADA /* Pods-MovieBookingApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieBookingApp.release.xcconfig"; path = "Target Support Files/Pods-MovieBookingApp/Pods-MovieBookingApp.release.xcconfig"; sourceTree = "<group>"; };
 		E1373918ED9B240B751CDEB1 /* Pods-MovieBookingApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieBookingApp.debug.xcconfig"; path = "Target Support Files/Pods-MovieBookingApp/Pods-MovieBookingApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,7 +161,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		9923183D27C356D30073E2DF /* extensions */ = {
+		9912E899281BE57500DB1D87 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				9912E89A281BE57C00DB1D87 /* BaseResponse.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		9923183D27C356D30073E2DF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				9923183E27C356E00073E2DF /* UIView+Extension.swift */,
@@ -142,7 +180,7 @@
 				9996523827C9FC62008190BC /* Router.swift */,
 				9947512A27CB532B0018396D /* UILabel+Extension.swift */,
 			);
-			path = extensions;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		9929D83C27C8A03A002B72DE /* swifts */ = {
@@ -186,11 +224,14 @@
 		992CC6A527BA236500D991A9 /* MovieBookingApp */ = {
 			isa = PBXGroup;
 			children = (
-				99780BB627C3FEAD00DA91EB /* components */,
-				9923183D27C356D30073E2DF /* extensions */,
+				994AC278281A768B00EDAD57 /* Realm */,
+				99E9CEB02813C62B00794996 /* Contstants */,
+				99E9CEA92812F81C00794996 /* Network */,
+				99780BB627C3FEAD00DA91EB /* Components */,
+				9923183D27C356D30073E2DF /* Extensions */,
 				99ACF15227C0CA1A00DC3AFC /* dummy */,
-				99ACF14F27C0C9BB00DC3AFC /* utils */,
-				99ACF14A27C0C90000DC3AFC /* data */,
+				99ACF14F27C0C9BB00DC3AFC /* Utils */,
+				99ACF14A27C0C90000DC3AFC /* Data */,
 				9969FB0B27BF5A4B00946B7E /* cells */,
 				99BDBE8327BD5CEA00AAF1A5 /* ViewController */,
 				992CC6A627BA236500D991A9 /* AppDelegate.swift */,
@@ -201,6 +242,13 @@
 				992CC6B427BA236600D991A9 /* Info.plist */,
 			);
 			path = MovieBookingApp;
+			sourceTree = "<group>";
+		};
+		994AC278281A768B00EDAD57 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Realm;
 			sourceTree = "<group>";
 		};
 		9969FB0B27BF5A4B00946B7E /* cells */ = {
@@ -248,30 +296,33 @@
 			isa = PBXGroup;
 			children = (
 				9947512727CB46770018396D /* PayCardCarouselCollectionViewCell.xib */,
+				99A4906727C75B8B00FF16A7 /* CastCollectionViewCell.xib */,
 				99780BBA27C400F500DA91EB /* MovieTypeCollectionViewCell.xib */,
 				992C258027C20FED00A43AF6 /* NowShowingCollectionViewCell.xib */,
 				99ACF14727C0C80B00DC3AFC /* MovieSeatCollectionViewCell.xib */,
 				9969FB1527BF604E00946B7E /* TimeCollectionViewCell.xib */,
 				9969FB1127BF5AA300946B7E /* DaysCollectionViewCell.xib */,
-				99A4906727C75B8B00FF16A7 /* CastCollectionViewCell.xib */,
 			);
 			path = xibs;
 			sourceTree = "<group>";
 		};
-		99780BB627C3FEAD00DA91EB /* components */ = {
+		99780BB627C3FEAD00DA91EB /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				99780BB727C3FEC200DA91EB /* RatingControl.swift */,
 			);
-			path = components;
+			path = Components;
 			sourceTree = "<group>";
 		};
-		99ACF14A27C0C90000DC3AFC /* data */ = {
+		99ACF14A27C0C90000DC3AFC /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				99E9CEBB2813E39F00794996 /* Repositories */,
+				99E9CEB82813E37500794996 /* Models */,
+				99E9CEB32813C95800794996 /* Responses */,
 				99ACF14B27C0C90400DC3AFC /* vos */,
 			);
-			path = data;
+			path = Data;
 			sourceTree = "<group>";
 		};
 		99ACF14B27C0C90400DC3AFC /* vos */ = {
@@ -282,12 +333,12 @@
 			path = vos;
 			sourceTree = "<group>";
 		};
-		99ACF14F27C0C9BB00DC3AFC /* utils */ = {
+		99ACF14F27C0C9BB00DC3AFC /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				99ACF15027C0C9C300DC3AFC /* AppConstants.swift */,
 			);
-			path = utils;
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		99ACF15227C0CA1A00DC3AFC /* dummy */ = {
@@ -311,8 +362,74 @@
 				9982389127C9482F00CDFBF5 /* TicketViewController.swift */,
 				9982389327C94F7D00CDFBF5 /* PaymentViewController.swift */,
 				9982389527C9544800CDFBF5 /* AddNewCardViewController.swift */,
+				99353422281A659100CD1813 /* DrawerViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		99E9CEA92812F81C00794996 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				99E9CEAB2812F84B00794996 /* Agents */,
+				99E9CEAA2812F84400794996 /* Protocols */,
+				99E9CEAC2812F8A000794996 /* NetworkEndPoint.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		99E9CEAA2812F84400794996 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				99E9CEAE2812F8C200794996 /* NetworkAgentProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		99E9CEAB2812F84B00794996 /* Agents */ = {
+			isa = PBXGroup;
+			children = (
+				99E9CEB62813C9B600794996 /* NetworkAgent.swift */,
+			);
+			path = Agents;
+			sourceTree = "<group>";
+		};
+		99E9CEB02813C62B00794996 /* Contstants */ = {
+			isa = PBXGroup;
+			children = (
+				99E9CEB12813C63800794996 /* StringConstants.swift */,
+			);
+			path = Contstants;
+			sourceTree = "<group>";
+		};
+		99E9CEB32813C95800794996 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				9912E899281BE57500DB1D87 /* Base */,
+				99E9CEB42813C96900794996 /* AuthResponse.swift */,
+				994AC27D281AE64400EDAD57 /* MovieResponse.swift */,
+				9912E89C281BEBBB00DB1D87 /* CinemaResponse.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		99E9CEB82813E37500794996 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				99E9CEB92813E38500794996 /* UserModel.swift */,
+				99E9CEBF2813E41100794996 /* BaseModel.swift */,
+				99E9CEC12813E47100794996 /* AuthModel.swift */,
+				994AC27B281AE5A300EDAD57 /* MovieModel.swift */,
+				99F9A9DA281D3B890092E6A3 /* CinemaModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		99E9CEBB2813E39F00794996 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				99E9CEBC2813E3A800794996 /* UserRepository.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		A7F8EB8B51F2895CB3D8121C /* Frameworks */ = {
@@ -455,10 +572,13 @@
 				9929D84627C8A5F0002B72DE /* FoodTableViewCell.swift in Sources */,
 				9982389227C9482F00CDFBF5 /* TicketViewController.swift in Sources */,
 				9996523927C9FC62008190BC /* Router.swift in Sources */,
+				99E9CEB52813C96900794996 /* AuthResponse.swift in Sources */,
 				99ACF14527C0B9EC00DC3AFC /* MovieSeatViewController.swift in Sources */,
 				9923184127C357020073E2DF /* UITextField+Extension.swift in Sources */,
+				9912E89B281BE57C00DB1D87 /* BaseResponse.swift in Sources */,
 				9929D84027C8A064002B72DE /* ComboSetTableViewCell.swift in Sources */,
 				9982389427C94F7D00CDFBF5 /* PaymentViewController.swift in Sources */,
+				99E9CEBA2813E38500794996 /* UserModel.swift in Sources */,
 				992C258427C2140B00A43AF6 /* HomeViewController.swift in Sources */,
 				9947512827CB46770018396D /* PayCardCarouselCollectionViewCell.swift in Sources */,
 				9969FB1627BF604E00946B7E /* TimeCollectionViewCell.swift in Sources */,
@@ -467,20 +587,32 @@
 				99780BB827C3FEC200DA91EB /* RatingControl.swift in Sources */,
 				9929D84327C8A3E4002B72DE /* UITableView+Extension.swift in Sources */,
 				9923184327C3571E0073E2DF /* UIViewController+Extension.swift in Sources */,
+				99E9CEC02813E41100794996 /* BaseModel.swift in Sources */,
 				992CC6A727BA236500D991A9 /* AppDelegate.swift in Sources */,
+				99E9CEC22813E47100794996 /* AuthModel.swift in Sources */,
+				99E9CEB22813C63800794996 /* StringConstants.swift in Sources */,
 				9923183F27C356E00073E2DF /* UIView+Extension.swift in Sources */,
 				9923184527C357380073E2DF /* UICollectionView+Extension.swift in Sources */,
+				994AC27C281AE5A300EDAD57 /* MovieModel.swift in Sources */,
+				99E9CEAD2812F8A000794996 /* NetworkEndPoint.swift in Sources */,
 				9982389627C9544800CDFBF5 /* AddNewCardViewController.swift in Sources */,
 				99A4906B27C75FB700FF16A7 /* SnackViewController.swift in Sources */,
 				99BDBE8527BD5CF900AAF1A5 /* MovieTimeViewController.swift in Sources */,
 				9923184727C3790D0073E2DF /* MovieDetailViewController.swift in Sources */,
 				9969FB1227BF5AA300946B7E /* DaysCollectionViewCell.swift in Sources */,
+				99E9CEB72813C9B600794996 /* NetworkAgent.swift in Sources */,
+				994AC27E281AE64400EDAD57 /* MovieResponse.swift in Sources */,
 				9929D84A27C90B75002B72DE /* PaymentMethodTableViewCell.swift in Sources */,
 				99A4906827C75B8B00FF16A7 /* CastCollectionViewCell.swift in Sources */,
 				992C258127C20FED00A43AF6 /* NowShowingCollectionViewCell.swift in Sources */,
 				992CC6A927BA236500D991A9 /* SceneDelegate.swift in Sources */,
 				99ACF15427C0CA2400DC3AFC /* DummyData.swift in Sources */,
+				99F9A9DB281D3B890092E6A3 /* CinemaModel.swift in Sources */,
+				9912E89D281BEBBB00DB1D87 /* CinemaResponse.swift in Sources */,
+				99E9CEAF2812F8C200794996 /* NetworkAgentProtocols.swift in Sources */,
+				99E9CEBD2813E3A800794996 /* UserRepository.swift in Sources */,
 				99ACF15127C0C9C300DC3AFC /* AppConstants.swift in Sources */,
+				99353423281A659100CD1813 /* DrawerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

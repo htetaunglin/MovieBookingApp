@@ -13,12 +13,74 @@ class MovieDetailViewController: UIViewController{
     @IBOutlet weak var collectionViewMovieType: UICollectionView!
     @IBOutlet weak var collectionViewCast: UICollectionView!
     @IBOutlet weak var viewDetailTopCorner: UIView!
+    @IBOutlet weak var starRate: RatingControl!
+    
+    @IBOutlet weak var moivePoster: UIImageView!
+    @IBOutlet weak var lblMovieName: UILabel!
+    @IBOutlet weak var lblDuration: UILabel!
+    @IBOutlet weak var lblRating: UILabel!
+    @IBOutlet weak var lblSummary: UILabel!
+    
+    let movieModel: MovieModel = MovieModelImpl.shared
+    
+    var movieId: Int? {
+        didSet {
+            if let id = movieId {
+                fetchMovieById(id)
+            }
+        }
+    }
+    
+    var movie: Movie? {
+        didSet {
+            if let m = movie {
+                lblMovieName.text = m.originalTitle
+                if let duration = m.runtime {
+                    lblDuration.text = "\(duration / 60)hr \(duration % 60)min"
+                } else {
+                    lblDuration.text = "- hr -min"
+                }
+                lblRating.text = "IMDb \(m.rating ?? 0)"
+                starRate.startCount = 5
+                starRate.rating = Int(m.rating ?? 0) / 2
+                moivePoster.sd_setImage(with: URL(string: "\(baseImageUrl)/\(m.posterPath ?? "")"))
+                genres = m.genres ?? []
+                lblSummary.text = m.overview ?? ""
+                casts = m.casts ?? []
+            }
+        }
+    }
+    
+    private var genres: [String]? = [] {
+        didSet {
+            collectionViewMovieType.reloadData()
+        }
+    }
+    
+    private var casts: [Cast] = [] {
+        didSet {
+            collectionViewCast.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         roundCornerOfViewDetail()
         setUpCollectionViewMovieType()
         setUpCollectionViewCast()
     }
+    
+    private func fetchMovieById(_ id: Int){
+        movieModel.getMovieById(id: id){ result in
+            switch result {
+            case .success(let movie):
+                self.movie = movie
+            case .failure(let error):
+                debugPrint(error)
+            }
+        }
+    }
+    
     
     private func roundCornerOfViewDetail(){
         viewDetailTopCorner.clipsToBounds = true
@@ -47,19 +109,21 @@ class MovieDetailViewController: UIViewController{
 extension MovieDetailViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == collectionViewMovieType {
-            return 2
+            return genres?.count ?? 0
         } else if collectionView == collectionViewCast{
-            return 3
+            return casts.count
         }
         return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == collectionViewMovieType {
-            let cell = collectionView.dequeueCell(identifier: MovieTypeCollectionViewCell.identifier, indexPath: indexPath)
+            let cell = collectionView.dequeueCell(identifier: MovieTypeCollectionViewCell.identifier, indexPath: indexPath) as MovieTypeCollectionViewCell
+            cell.lblGenreName.text = genres?[indexPath.row] ?? ""
             return cell
         } else if collectionView == collectionViewCast{
-            let cell = collectionView.dequeueCell(identifier: CastCollectionViewCell.identifier, indexPath: indexPath)
+            let cell = collectionView.dequeueCell(identifier: CastCollectionViewCell.identifier, indexPath: indexPath) as CastCollectionViewCell
+            cell.image = casts[indexPath.row].profilePath
             return cell
         }
         return UICollectionViewCell()

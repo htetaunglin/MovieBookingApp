@@ -21,12 +21,30 @@ class MovieTimeViewController: UIViewController{
     
     @IBOutlet weak var viewTime: UIView!
     
+    private let cinemaModel: CinemaModel = CinemaModelImpl.shared
+    
+    private var dates: [Date] = [] {
+        didSet {
+            collectionViewDays.reloadData()
+        }
+    }
+    
+    private var cinemas: [Cinema] = [] {
+        didSet {
+            collectionViewAvailableIn.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCells()
         setUpDataSourceAndDelegate()
         setUpHeightForCollectionView()
         setCornerViewTime()
+        // Build UI Data
+        generateDateTime()
+        fetchCinemas()
+        debugPrint(dates)
     }
     
     private func setCornerViewTime(){
@@ -68,8 +86,27 @@ class MovieTimeViewController: UIViewController{
         navigateToMovieSeatViewController()
     }
     
-    @IBAction func back(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+    
+    fileprivate func generateDateTime(){
+        let calendar = NSCalendar.current
+        var startDay = calendar.startOfDay(for: Date())
+        for _ in 1...7{
+            if let date = calendar.date(byAdding: .day, value: 1, to: startDay){
+                startDay = date
+                dates.append(date)
+            }
+        }
+    }
+    
+    fileprivate func fetchCinemas(){
+        cinemaModel.getCinemas{ [weak self] result in
+            switch result {
+            case .success(let cinemas):
+                self?.cinemas = cinemas
+            case .failure(let error):
+                debugPrint(error)
+            }
+        }
     }
 }
 
@@ -77,18 +114,23 @@ class MovieTimeViewController: UIViewController{
 extension MovieTimeViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == collectionViewDays {
-            return 10;
+            return dates.count;
         }else if collectionView == collectionViewAvailableIn{
-            return 3
+            return cinemas.count;
         }
         return 6;
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == collectionViewDays {
-            let cell = collectionView.dequeueCell(identifier: DaysCollectionViewCell.identifier, indexPath: indexPath)
+            let cell = collectionView.dequeueCell(identifier: DaysCollectionViewCell.identifier, indexPath: indexPath) as DaysCollectionViewCell
+            cell.date = dates[indexPath.row]
             return cell;
-        }else if collectionView == collectionViewAvailableIn || collectionView == collectionViewGoldenCity || collectionView == collectionViewWestPoint{
+        }else if collectionView == collectionViewAvailableIn{
+            let cell = collectionView.dequeueCell(identifier: TimeCollectionViewCell.identifier, indexPath: indexPath) as TimeCollectionViewCell
+            cell.label.text = cinemas[indexPath.row].name
+            return cell
+        } else if collectionView == collectionViewGoldenCity || collectionView == collectionViewWestPoint {
             let cell = collectionView.dequeueCell(identifier: TimeCollectionViewCell.identifier, indexPath: indexPath)
             return cell
         }

@@ -21,19 +21,29 @@ extension UIStoryboard{
 
 extension UIViewController{
     
-    func navigateToAuthController(){
+    func navigateToAuthController(isReplace: Bool){
         guard let vc = UIStoryboard.mainStoryBoard().instantiateViewController(identifier: AuthViewController.identifier) as? AuthViewController else {return}
-        self.navigationController?.pushViewController(vc, animated: true)
+        if isReplace {
+            self.navigationController?.setViewControllers([vc], animated: true)
+        } else {
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
     }
     
-    func navigateToHomeController(){
+    func navigateToHomeController(isReplace: Bool){
         guard let vc = UIStoryboard.mainStoryBoard().instantiateViewController(identifier: HomeViewController.identifier) as? HomeViewController else {return}
-        vc.navigationItem.hidesBackButton = true
-        self.navigationController?.pushViewController(vc, animated: true)
+        if isReplace {
+            self.navigationController?.setViewControllers([vc], animated: true)
+        } else {
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
-    func navigateMovieDetailViewController(){
+    func navigateMovieDetailViewController(movie: Movie?){
         guard let vc = UIStoryboard.mainStoryBoard().instantiateViewController(identifier: MovieDetailViewController.identifier) as? MovieDetailViewController else {return}
+//        vc.movie = movie
+        vc.movieId = movie?.id
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

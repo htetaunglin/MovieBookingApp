@@ -20,6 +20,6 @@ class GetStartedViewController : UIViewController{
         btnGetStart.layer.borderWidth = 1
     }
     @IBAction func onClickGetStart(_ sender: Any) {
-        navigateToAuthController()
+        navigateToAuthController(isReplace: true)
     }
 }

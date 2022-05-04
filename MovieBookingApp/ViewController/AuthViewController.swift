@@ -8,6 +8,11 @@
 import Foundation
 import UIKit
 
+enum AuthScreenTab{
+    case login
+    case signUp
+}
+
 class AuthViewController: UIViewController{
     @IBOutlet weak var textfieldEmail: UITextField!
     @IBOutlet weak var textfieldPassword: UITextField!
@@ -27,14 +32,21 @@ class AuthViewController: UIViewController{
     @IBOutlet weak var lblSignUp: UILabel!
     @IBOutlet weak var lblLogin: UILabel!
     
+    var currentTab : AuthScreenTab = .login
+    
+    let authModel: AuthModel = AuthModelImpl.shared
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         inputGroupName.isHidden = true
         inputGroupPhone.isHidden = true
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
         setTextFieldBorder()
         decorateFacebookButton()
         setUpControlTab()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     private func setTextFieldBorder(){
@@ -55,17 +67,27 @@ class AuthViewController: UIViewController{
     
     @objc func onClickSignUp() {
         debugPrint("Click SignUp")
-        changeTab(isLogin: false)
+        if currentTab == .login {
+            currentTab = .signUp
+            changeTab(isLogin: false)
+        }
     }
     
     @objc func onClickLogin(){
         debugPrint("Click Login")
-        changeTab(isLogin: true)
+        if currentTab == .signUp {
+            currentTab = .login
+            changeTab(isLogin: true)
+        }
     }
     
     private func changeTab(isLogin: Bool){
         inputGroupPhone.isHidden = isLogin
         inputGroupName.isHidden = isLogin
+        textfieldEmail.text = ""
+        textfieldPhone.text = ""
+        textfieldName.text = ""
+        textfieldPassword.text = ""
         if isLogin {
             indicatorOfLogin.backgroundColor = UIColor.init(named: "primary_color")
             lblLogin.textColor = UIColor.init(named: "primary_color")
@@ -80,6 +102,36 @@ class AuthViewController: UIViewController{
     }
     
     @IBAction func onClickConfirm(_ sender: Any) {
-        navigateToHomeController()
+        showLoadingAlert()
+        switch currentTab {
+        case .login:
+            authModel.loginWithEmail(email: textfieldEmail.text ?? "", password: textfieldPassword.text ?? ""){ result in
+                switch result {
+                case .success(_):
+                    self.presentedViewController?.dismiss(animated: false){
+                        self.navigateToHomeController(isReplace: true)
+                    }
+                case .failure(let error):
+                    self.presentedViewController?.dismiss(animated: false)
+                    self.showMessageAlert(error)
+                    debugPrint(error)
+                }
+            }
+            break
+        case .signUp:
+            authModel.signUpWithEmail(name: textfieldName.text ?? "", email: textfieldEmail.text ?? "", phone: textfieldPhone.text ?? "", password: textfieldPassword.text ?? ""){ result in
+                switch result {
+                case .success(_):
+                    self.dismiss(animated: false){
+                        self.navigateToHomeController(isReplace: true)
+                    }
+                case .failure(let error):
+                    self.dismiss(animated: false)
+                    self.showMessageAlert(error)
+                    debugPrint(error)
+                }
+            }
+            break
+        }
     }
 }
