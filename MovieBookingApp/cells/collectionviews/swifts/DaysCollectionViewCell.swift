@@ -28,6 +28,26 @@ class DaysCollectionViewCell: UICollectionViewCell {
             
         }
     }
+    
+    var isSelect: Bool = false {
+        didSet {
+            if isSelect {
+                lblDay.textColor = UIColor.white
+                lblDay.layer.opacity = 1
+                lblDay.font = UIFont.systemFont(ofSize: 18)
+                lblWeekDay.textColor = UIColor.white
+                lblWeekDay.layer.opacity = 1
+                lblWeekDay.font = UIFont.systemFont(ofSize: 18)
+            } else {
+                lblDay.textColor = UIColor.white
+                lblDay.layer.opacity = 0.6
+                lblDay.font = UIFont.systemFont(ofSize: 16)
+                lblWeekDay.textColor = UIColor.white
+                lblWeekDay.layer.opacity = 0.6
+                lblWeekDay.font = UIFont.systemFont(ofSize: 16)
+            }
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()

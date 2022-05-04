@@ -27,5 +27,5 @@ protocol NetworkAgentProtocol {
     
     // MARK: - Cinema
     func getCinemas(completion: @escaping (MBAResult<BaseResponse<[Cinema]>>) -> Void)
-    func getTimeSlots(movieId: Int, date: String, completion: @escaping (MBAResult<BaseResponse<[Cinema]>>) -> Void)
+    func getTimeSlots(token: String, movieId: Int, date: String, completion: @escaping (MBAResult<BaseResponse<[CinemaTimeSlot]>>) -> Void)
 }

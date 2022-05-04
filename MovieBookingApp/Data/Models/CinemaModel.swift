@@ -9,7 +9,7 @@ import Foundation
 
 protocol CinemaModel {
     func getCinemas(completion: @escaping (MBAResult<[Cinema]>) -> Void)
-    func getTimeSlots(movieId: Int, date: String, completion: @escaping (MBAResult<[Cinema]>) -> Void)
+    func getTimeSlots(movieId: Int, date: String, completion: @escaping (MBAResult<[CinemaTimeSlot]>) -> Void)
 }
 
 class CinemaModelImpl: BaseModel, CinemaModel {    
@@ -27,14 +27,19 @@ class CinemaModelImpl: BaseModel, CinemaModel {
         }
     }
     
-    func getTimeSlots(movieId: Int, date: String, completion: @escaping (MBAResult<[Cinema]>) -> Void) {
-        networkAgent.getTimeSlots(movieId: movieId, date: date){ result in
-            switch result {
-            case .success(let response):
-                completion(.success(response.data ?? []))
-            case .failure(let error):
-                completion(.failure(error))
+    func getTimeSlots(movieId: Int, date: String, completion: @escaping (MBAResult<[CinemaTimeSlot]>) -> Void) {
+        if let token = UserModelImpl.userToken {
+            networkAgent.getTimeSlots(token: token, movieId: movieId, date: date){ result in
+                switch result {
+                case .success(let response):
+                    completion(.success(response.data ?? []))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
             }
+        } else {
+            completion(.failure("Token not found"))
         }
+       
     }
 }

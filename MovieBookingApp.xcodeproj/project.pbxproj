@@ -58,6 +58,8 @@
 		99ACF15127C0C9C300DC3AFC /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ACF15027C0C9C300DC3AFC /* AppConstants.swift */; };
 		99ACF15427C0CA2400DC3AFC /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ACF15327C0CA2400DC3AFC /* DummyData.swift */; };
 		99BDBE8527BD5CF900AAF1A5 /* MovieTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BDBE8427BD5CF900AAF1A5 /* MovieTimeViewController.swift */; };
+		99E213D62822F8BA0097A50E /* TimeSlotResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E213D52822F8BA0097A50E /* TimeSlotResponse.swift */; };
+		99E213D82822FB930097A50E /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E213D72822FB930097A50E /* Date+Extension.swift */; };
 		99E9CEAD2812F8A000794996 /* NetworkEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E9CEAC2812F8A000794996 /* NetworkEndPoint.swift */; };
 		99E9CEAF2812F8C200794996 /* NetworkAgentProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E9CEAE2812F8C200794996 /* NetworkAgentProtocols.swift */; };
 		99E9CEB22813C63800794996 /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E9CEB12813C63800794996 /* StringConstants.swift */; };
@@ -125,6 +127,8 @@
 		99ACF15027C0C9C300DC3AFC /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		99ACF15327C0CA2400DC3AFC /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
 		99BDBE8427BD5CF900AAF1A5 /* MovieTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTimeViewController.swift; sourceTree = "<group>"; };
+		99E213D52822F8BA0097A50E /* TimeSlotResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSlotResponse.swift; sourceTree = "<group>"; };
+		99E213D72822FB930097A50E /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		99E9CEAC2812F8A000794996 /* NetworkEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEndPoint.swift; sourceTree = "<group>"; };
 		99E9CEAE2812F8C200794996 /* NetworkAgentProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAgentProtocols.swift; sourceTree = "<group>"; };
 		99E9CEB12813C63800794996 /* StringConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
@@ -179,6 +183,7 @@
 				9929D84227C8A3E4002B72DE /* UITableView+Extension.swift */,
 				9996523827C9FC62008190BC /* Router.swift */,
 				9947512A27CB532B0018396D /* UILabel+Extension.swift */,
+				99E213D72822FB930097A50E /* Date+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -408,6 +413,7 @@
 				99E9CEB42813C96900794996 /* AuthResponse.swift */,
 				994AC27D281AE64400EDAD57 /* MovieResponse.swift */,
 				9912E89C281BEBBB00DB1D87 /* CinemaResponse.swift */,
+				99E213D52822F8BA0097A50E /* TimeSlotResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -590,6 +596,7 @@
 				99E9CEC02813E41100794996 /* BaseModel.swift in Sources */,
 				992CC6A727BA236500D991A9 /* AppDelegate.swift in Sources */,
 				99E9CEC22813E47100794996 /* AuthModel.swift in Sources */,
+				99E213D82822FB930097A50E /* Date+Extension.swift in Sources */,
 				99E9CEB22813C63800794996 /* StringConstants.swift in Sources */,
 				9923183F27C356E00073E2DF /* UIView+Extension.swift in Sources */,
 				9923184527C357380073E2DF /* UICollectionView+Extension.swift in Sources */,
@@ -603,6 +610,7 @@
 				99E9CEB72813C9B600794996 /* NetworkAgent.swift in Sources */,
 				994AC27E281AE64400EDAD57 /* MovieResponse.swift in Sources */,
 				9929D84A27C90B75002B72DE /* PaymentMethodTableViewCell.swift in Sources */,
+				99E213D62822F8BA0097A50E /* TimeSlotResponse.swift in Sources */,
 				99A4906827C75B8B00FF16A7 /* CastCollectionViewCell.swift in Sources */,
 				992C258127C20FED00A43AF6 /* NowShowingCollectionViewCell.swift in Sources */,
 				992CC6A927BA236500D991A9 /* SceneDelegate.swift in Sources */,
