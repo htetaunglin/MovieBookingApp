@@ -89,6 +89,13 @@ class NetworkAgent: NetworkAgentProtocol {
         ])
         AF.request(NetworkEndPoint.timeslot(movieId: movieId, date: date), headers: headers).customDecodable(completion: completion)
     }
+    
+    func getSeats(token: String, timeSlotId: Int, date: String, completion: @escaping (MBAResult<BaseResponse<[[Seat]]>>) -> Void) {
+        let headers = HTTPHeaders([
+            HTTPHeader(name: "Authorization", value: "Bearer \(token)")
+        ])
+        AF.request(NetworkEndPoint.seat(timeSlotId: timeSlotId, date: date), headers: headers).customDecodable(completion: completion)
+    }
 }
 
 

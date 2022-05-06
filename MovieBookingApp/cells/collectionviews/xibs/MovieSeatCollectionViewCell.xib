@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,10 +19,10 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zp3-Ij-60u">
-                        <rect key="frame" x="8" y="8" width="58" height="48"/>
+                        <rect key="frame" x="4" y="4" width="66" height="56"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lvU-Fo-o46">
-                                <rect key="frame" x="24" y="15.5" width="10" height="17"/>
+                                <rect key="frame" x="28" y="19.5" width="10" height="17"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -38,10 +38,10 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="Zp3-Ij-60u" secondAttribute="bottom" constant="8" id="4gI-lT-g3b"/>
-                <constraint firstItem="Zp3-Ij-60u" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="5MP-3o-wyF"/>
-                <constraint firstAttribute="trailing" secondItem="Zp3-Ij-60u" secondAttribute="trailing" constant="8" id="Gnl-df-6EM"/>
-                <constraint firstItem="Zp3-Ij-60u" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="ov6-kj-pCX"/>
+                <constraint firstAttribute="bottom" secondItem="Zp3-Ij-60u" secondAttribute="bottom" constant="4" id="4gI-lT-g3b"/>
+                <constraint firstItem="Zp3-Ij-60u" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="5MP-3o-wyF"/>
+                <constraint firstAttribute="trailing" secondItem="Zp3-Ij-60u" secondAttribute="trailing" constant="4" id="Gnl-df-6EM"/>
+                <constraint firstItem="Zp3-Ij-60u" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="4" id="ov6-kj-pCX"/>
             </constraints>
             <size key="customSize" width="74" height="64"/>
             <connections>

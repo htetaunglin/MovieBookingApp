@@ -17,6 +17,7 @@ enum NetworkEndPoint: URLConvertible {
     case movieById(id: Int)
     case cinema
     case timeslot(movieId: Int, date: String)
+    case seat(timeSlotId: Int, date: String)
     
     func asURL() throws -> URL {
         return url
@@ -45,6 +46,8 @@ enum NetworkEndPoint: URLConvertible {
             return "/api/v1/cinemas"
         case .timeslot(let movieId, let date):
             return "/api/v1/cinema-day-timeslots?movie_id=\(movieId)&date=\(date)"
+        case .seat(let timeSlotId, let date):
+            return "/api/v1/seat-plan?cinema_day_timeslot_id=\(timeSlotId)&booking_date=\(date)"
         }
     }
 }

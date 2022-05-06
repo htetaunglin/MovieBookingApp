@@ -9,14 +9,14 @@ import Foundation
 
 let dummyMovieSeats = [
     MovieSeatVo(title: "A", type: SEAT_TYPE_TEXT),
-    MovieSeatVo(title: "", type: SEAT_TYPE_EMPTY),
+    MovieSeatVo(title: "", type: SEAT_TYPE_SPACE),
     MovieSeatVo(title: "", type: SEAT_TYPE_AVAILABLE),
     MovieSeatVo(title: "", type: SEAT_TYPE_AVAILABLE),
     MovieSeatVo(title: "", type: SEAT_TYPE_AVAILABLE),
     MovieSeatVo(title: "", type: SEAT_TYPE_AVAILABLE),
     MovieSeatVo(title: "", type: SEAT_TYPE_AVAILABLE),
     MovieSeatVo(title: "", type: SEAT_TYPE_AVAILABLE),
-    MovieSeatVo(title: "", type: SEAT_TYPE_EMPTY),
+    MovieSeatVo(title: "", type: SEAT_TYPE_SPACE),
     MovieSeatVo(title: "A", type: SEAT_TYPE_TEXT),
     MovieSeatVo(title: "B", type: SEAT_TYPE_TEXT),
     MovieSeatVo(title: "", type: SEAT_TYPE_AVAILABLE),

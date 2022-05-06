@@ -36,6 +36,8 @@
 		9947512B27CB532B0018396D /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9947512A27CB532B0018396D /* UILabel+Extension.swift */; };
 		994AC27C281AE5A300EDAD57 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994AC27B281AE5A300EDAD57 /* MovieModel.swift */; };
 		994AC27E281AE64400EDAD57 /* MovieResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994AC27D281AE64400EDAD57 /* MovieResponse.swift */; };
+		9954609228250C450092AA66 /* SeatResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9954609128250C450092AA66 /* SeatResponse.swift */; };
+		9954609428250C7D0092AA66 /* SeatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9954609328250C7D0092AA66 /* SeatModel.swift */; };
 		9969FB1227BF5AA300946B7E /* DaysCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9969FB1027BF5AA300946B7E /* DaysCollectionViewCell.swift */; };
 		9969FB1327BF5AA300946B7E /* DaysCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9969FB1127BF5AA300946B7E /* DaysCollectionViewCell.xib */; };
 		9969FB1627BF604E00946B7E /* TimeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9969FB1427BF604E00946B7E /* TimeCollectionViewCell.swift */; };
@@ -105,6 +107,8 @@
 		9947512A27CB532B0018396D /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		994AC27B281AE5A300EDAD57 /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
 		994AC27D281AE64400EDAD57 /* MovieResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieResponse.swift; sourceTree = "<group>"; };
+		9954609128250C450092AA66 /* SeatResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatResponse.swift; sourceTree = "<group>"; };
+		9954609328250C7D0092AA66 /* SeatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatModel.swift; sourceTree = "<group>"; };
 		9969FB1027BF5AA300946B7E /* DaysCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysCollectionViewCell.swift; sourceTree = "<group>"; };
 		9969FB1127BF5AA300946B7E /* DaysCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DaysCollectionViewCell.xib; sourceTree = "<group>"; };
 		9969FB1427BF604E00946B7E /* TimeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -414,6 +418,7 @@
 				994AC27D281AE64400EDAD57 /* MovieResponse.swift */,
 				9912E89C281BEBBB00DB1D87 /* CinemaResponse.swift */,
 				99E213D52822F8BA0097A50E /* TimeSlotResponse.swift */,
+				9954609128250C450092AA66 /* SeatResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -426,6 +431,7 @@
 				99E9CEC12813E47100794996 /* AuthModel.swift */,
 				994AC27B281AE5A300EDAD57 /* MovieModel.swift */,
 				99F9A9DA281D3B890092E6A3 /* CinemaModel.swift */,
+				9954609328250C7D0092AA66 /* SeatModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -583,6 +589,7 @@
 				9923184127C357020073E2DF /* UITextField+Extension.swift in Sources */,
 				9912E89B281BE57C00DB1D87 /* BaseResponse.swift in Sources */,
 				9929D84027C8A064002B72DE /* ComboSetTableViewCell.swift in Sources */,
+				9954609428250C7D0092AA66 /* SeatModel.swift in Sources */,
 				9982389427C94F7D00CDFBF5 /* PaymentViewController.swift in Sources */,
 				99E9CEBA2813E38500794996 /* UserModel.swift in Sources */,
 				992C258427C2140B00A43AF6 /* HomeViewController.swift in Sources */,
@@ -601,6 +608,7 @@
 				9923183F27C356E00073E2DF /* UIView+Extension.swift in Sources */,
 				9923184527C357380073E2DF /* UICollectionView+Extension.swift in Sources */,
 				994AC27C281AE5A300EDAD57 /* MovieModel.swift in Sources */,
+				9954609228250C450092AA66 /* SeatResponse.swift in Sources */,
 				99E9CEAD2812F8A000794996 /* NetworkEndPoint.swift in Sources */,
 				9982389627C9544800CDFBF5 /* AddNewCardViewController.swift in Sources */,
 				99A4906B27C75FB700FF16A7 /* SnackViewController.swift in Sources */,

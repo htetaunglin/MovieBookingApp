@@ -806,13 +806,13 @@
                                                                 <rect key="frame" x="16" y="8" width="382" height="19.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Tickets" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tp3-W4-FIo">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="372.5" height="19.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="372" height="19.5"/>
                                                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="16"/>
                                                                         <color key="textColor" name="movie_seat_taken_color"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rjP-wQ-XnX">
-                                                                        <rect key="frame" x="372.5" y="0.0" width="9.5" height="19.5"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rjP-wQ-XnX">
+                                                                        <rect key="frame" x="372" y="0.0" width="10" height="19.5"/>
                                                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="16"/>
                                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
@@ -823,13 +823,13 @@
                                                                 <rect key="frame" x="16" y="43.5" width="382" height="19.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Seats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jG4-bb-L2a">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="303.5" height="19.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="374.5" height="19.5"/>
                                                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="16"/>
                                                                         <color key="textColor" name="movie_seat_taken_color"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D Row/ 5, 6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8pK-vi-HEk">
-                                                                        <rect key="frame" x="303.5" y="0.0" width="78.5" height="19.5"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8pK-vi-HEk">
+                                                                        <rect key="frame" x="374.5" y="0.0" width="7.5" height="19.5"/>
                                                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="16"/>
                                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
@@ -849,7 +849,7 @@
                                                                     <constraint firstAttribute="height" constant="48" id="vP1-e7-bJl"/>
                                                                 </constraints>
                                                                 <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" title="Buy Ticket for $20.00">
+                                                                <buttonConfiguration key="configuration" style="plain" title="Buy Ticket for $0">
                                                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="16"/>
                                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </buttonConfiguration>
@@ -891,7 +891,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="2iC-7w-Zl1"/>
                     <connections>
+                        <outlet property="btnBuyTicket" destination="YSh-Rc-25I" id="bUK-gD-rgq"/>
                         <outlet property="collectionViewSeat" destination="7kK-Ff-b4m" id="WrN-it-BhE"/>
+                        <outlet property="heightofCollectionViewSeat" destination="26K-Xp-4aE" id="Vq6-TE-Do4"/>
+                        <outlet property="lblSelectedCount" destination="rjP-wQ-XnX" id="WEW-xd-0Td"/>
+                        <outlet property="lblSelectedSeat" destination="8pK-vi-HEk" id="oZH-4g-SsE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Cx-Oo-sWV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
