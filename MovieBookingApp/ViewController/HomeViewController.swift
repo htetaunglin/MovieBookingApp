@@ -45,19 +45,18 @@ class HomeViewController: UIViewController{
     }
     
     func fetchMovies(){
-        movieModel.getComingMovies(take: 10){ result in
+        movieModel.getComingMovies(take: 10){[weak self] result in
             switch result {
             case .success(let movies):
-                self.comingSoonMovies = movies
+                self?.comingSoonMovies = movies
             case .failure(let error):
                 debugPrint("Error \(error)")
             }
         }
-        movieModel.getShowingMovies(take: 10){
-            result in
+        movieModel.getShowingMovies(take: 10){[weak self] result in
             switch result {
             case .success(let movies):
-                self.nowShowingMovies = movies
+                self?.nowShowingMovies = movies
             case .failure(let error):
                 debugPrint("Error \(error)")
             }
@@ -65,10 +64,10 @@ class HomeViewController: UIViewController{
     }
     
     func fetchProfile(){
-        userModel.getCurrentUser{ result in
+        userModel.getCurrentUser{[weak self] result in
             switch result {
             case .success(let user):
-                self.user = user
+                self?.user = user
             case .failure(let error):
                 debugPrint("Error \(error)")
             }

@@ -9,7 +9,7 @@ import Foundation
 struct Snack: Codable, Hashable {
     let id: Int?
     let name, snackDescription: String?
-    let price: Int?
+    let price: Double?
     let image: String?
 
     enum CodingKeys: String, CodingKey {

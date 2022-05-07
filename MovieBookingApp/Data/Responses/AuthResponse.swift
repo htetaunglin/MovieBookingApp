@@ -23,20 +23,3 @@ struct User: Codable {
         case paymentCard = "cards"
     }
 }
-
-// MARK: - PaymentCard
-struct PaymentCard: Codable {
-    let id: Int?
-    let cardHolder, cardNumber, cardType: String?
-    let image: String?
-    let amount: String?
-
-    enum CodingKeys: String, CodingKey {
-        case id
-        case cardHolder = "card_holder"
-        case cardNumber = "card_number"
-        case cardType = "card_type"
-        case image, amount
-    }
-}
-

@@ -9,7 +9,7 @@ import Foundation
 struct Seat: Codable {
     let id: Int?
     let type, seatName, symbol: String?
-    let price: Int?
+    let price: Double?
     
     enum CodingKeys: String, CodingKey {
         case id, type

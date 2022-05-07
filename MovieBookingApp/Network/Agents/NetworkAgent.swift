@@ -190,4 +190,35 @@ class NetworkAgent: NetworkAgentProtocol {
         ])
         AF.request(NetworkEndPoint.paymentMethod, headers: headers).decodable(completion: completion)
     }
+    
+    func createPaymentCard(token: String, cardNumber: String, holder: String, expire: String, cvc: String, completion: @escaping (MBAResult<BaseResponse<[PaymentCard]>>) -> Void) {
+        let headers = HTTPHeaders([
+            HTTPHeader(name: "Authorization", value: "Bearer \(token)")
+        ])
+        let param = [
+            "card_number": cardNumber,
+            "card_holder": holder,
+            "expiration_date": expire,
+            "cvc": cvc
+        ]
+        AF.request(NetworkEndPoint.createCard,
+                   method: .post,
+                   parameters: param,
+                   encoder: URLEncodedFormParameterEncoder.default,
+                   headers: headers)
+        .decodable(completion: completion)
+    }
+    
+    func checkout(token: String, cinemaDayTimeSlotId: Int, row: String, seatNumber: String, bookingDate: String, totalPrice: Double, movieId: Int, cardId: Int, cinemaId: Int, snacks: [SnackRequest], completion: @escaping (MBAResult<BaseResponse<MovieTicket>>) -> Void) {
+        let headers = HTTPHeaders([
+            HTTPHeader(name: "Authorization", value: "Bearer \(token)")
+        ])
+        let param = TicketRequest(cinemaDayTimeslotID: cinemaDayTimeSlotId, row: row, seatNumber: seatNumber, bookingDate: bookingDate, totalPrice: totalPrice, movieID: movieId, cardID: cardId, cinemaID: cinemaId, snacks: snacks)
+        AF.request(NetworkEndPoint.checkout,
+                   method: .post,
+                   parameters: param,
+                   encoder: URLEncodedFormParameterEncoder.default,
+                   headers: headers)
+        .decodable(completion: completion)
+    }
 }

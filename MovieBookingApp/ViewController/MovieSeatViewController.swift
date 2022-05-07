@@ -81,7 +81,7 @@ class MovieSeatViewController: UIViewController{
     }
     
     func fetchSeats(){
-        seatModel.getSeat(timeSlotId: 1, date: "2022-5-13"){[weak self] result in
+        seatModel.getSeat(timeSlotId: MovieTicketVo.movieTime?.getCinemaDayTimeSlotId() ?? 0, date: MovieTicketVo.movieTime?.getBookingDate() ?? ""){[weak self] result in
             switch result {
             case .success(let seats):
                 self?.seats = seats.reduce([Seat]()){ results, rowseat in

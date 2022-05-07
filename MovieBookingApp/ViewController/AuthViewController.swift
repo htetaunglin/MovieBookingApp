@@ -112,9 +112,10 @@ class AuthViewController: UIViewController{
                         self.navigateToHomeController(isReplace: true)
                     }
                 case .failure(let error):
-                    self.presentedViewController?.dismiss(animated: false)
-                    self.showMessageAlert(error)
-                    debugPrint(error)
+                    self.presentedViewController?.dismiss(animated: false){
+                        self.showMessageAlert(error)
+                        debugPrint(error)
+                    }
                 }
             }
             break

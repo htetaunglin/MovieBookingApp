@@ -37,7 +37,7 @@ class SnackViewController: UIViewController{
         }
     }
     
-    var totalAmount: Int = 0 {
+    var totalAmount: Double = 0 {
         didSet {
             lblSubTotal.text = "Sub total: \(totalAmount)$"
             btnPay.setTitle("Pay $\((MovieTicketVo.movieSeat?.getTotalAmount() ?? 0) + totalAmount)", for: .normal)
@@ -46,8 +46,8 @@ class SnackViewController: UIViewController{
     
     var selectedCombo: [Snack: Int] = [Snack: Int]() {
         didSet {
-            totalAmount = selectedCombo.reduce(0){ previous, combo in
-                return previous + ((combo.key.price ?? 0) * combo.value)
+            totalAmount = selectedCombo.reduce(0.0){ previous, combo in
+                return previous + ((combo.key.price ?? 0) * Double(combo.value))
             }
         }
     }
@@ -153,12 +153,10 @@ extension SnackViewController: UITableViewDataSource{
 
 extension SnackViewController: ComboSetDelegate {
     func add(snack: Snack, count: Int) {
-        debugPrint("Add \(snack.name!) \(count) -> \((snack.price ?? 0) * count)")
         selectedCombo[snack] = count
     }
     
     func minus(snack: Snack, count: Int) {
-        debugPrint("Minus \(snack.name!) \(count) -> \((snack.price ?? 0) * count)")
         selectedCombo[snack] = count
     }
 }

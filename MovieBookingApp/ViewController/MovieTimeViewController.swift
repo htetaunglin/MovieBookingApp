@@ -48,7 +48,7 @@ class MovieTimeViewController: UIViewController{
         didSet {
             // fetch network
             if let date = chooseDate {
-                fetchTimeSlots(movieId: 1, date: date.toFormat(format: "yyyy-MM-dd"))
+                fetchTimeSlots(movieId: MovieTicketVo.movie?.id ?? 0, date: date.toFormat(format: "yyyy-MM-dd"))
             }
             collectionViewDays.reloadData()
         }

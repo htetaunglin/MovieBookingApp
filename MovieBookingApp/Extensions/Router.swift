@@ -67,12 +67,13 @@ extension UIViewController{
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    func navigateToAddNewCardViewController(){
+    func navigateToAddNewCardViewController(delegate: AddNewCardDelegate){
         guard let vc = UIStoryboard.mainStoryBoard().instantiateViewController(identifier: AddNewCardViewController.identifier) as? AddNewCardViewController else {return}
+        vc.delegate = delegate
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    func navigateToTicketViewController(){
+    func navigateToTicketViewController(ticket: MovieTicket){
         guard let vc = UIStoryboard.mainStoryBoard().instantiateViewController(identifier: TicketViewController.identifier) as? TicketViewController else {return}
         self.navigationController?.pushViewController(vc, animated: true)
     }

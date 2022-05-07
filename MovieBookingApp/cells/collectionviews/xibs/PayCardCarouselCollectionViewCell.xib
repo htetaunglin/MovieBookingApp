@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,7 +21,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rfQ-B9-XhZ">
                         <rect key="frame" x="0.0" y="0.0" width="386" height="282"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="visa" translatesAutoresizingMaskIntoConstraints="NO" id="fEW-Kk-87o">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fEW-Kk-87o">
                                 <rect key="frame" x="20" y="20" width="48" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="Nwq-PX-AOf"/>
@@ -139,13 +139,15 @@
                 <outlet property="cardNumber2" destination="ZGW-HB-XiZ" id="2Uo-Z8-BqQ"/>
                 <outlet property="cardNumber3" destination="yGB-jz-MyR" id="WIe-A4-F4V"/>
                 <outlet property="cardNumber4" destination="dwt-sn-wsf" id="X7k-F0-WHH"/>
+                <outlet property="imgCardType" destination="fEW-Kk-87o" id="Z8D-6W-Sct"/>
+                <outlet property="lblCardHolder" destination="F6l-xC-fBH" id="PwP-Ux-SEe"/>
+                <outlet property="lblExpires" destination="Plc-5W-Clt" id="Ym3-ep-RD6"/>
             </connections>
             <point key="canvasLocation" x="381.15942028985512" y="191.51785714285714"/>
         </collectionViewCell>
     </objects>
     <resources>
         <image name="ellipsis" catalog="system" width="128" height="37"/>
-        <image name="visa" width="266.66665649414062" height="86.333335876464844"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

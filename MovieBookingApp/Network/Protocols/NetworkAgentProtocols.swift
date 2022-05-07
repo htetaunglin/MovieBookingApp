@@ -37,4 +37,20 @@ protocol NetworkAgentProtocol {
     
     // MARK: - Payment method
     func getPaymentMethod(token: String, completion: @escaping (MBAResult<BaseResponse<[PaymentMethod]>>) -> Void)
+    
+    // MARK: - Payment card
+    func createPaymentCard(token: String, cardNumber: String, holder: String, expire: String, cvc: String, completion: @escaping (MBAResult<BaseResponse<[PaymentCard]>>) -> Void)
+    
+    // MARK: - Checkout
+    func checkout(token: String,
+                  cinemaDayTimeSlotId: Int,
+                  row: String,
+                  seatNumber: String,
+                  bookingDate: String,
+                  totalPrice: Double,
+                  movieId: Int,
+                  cardId: Int,
+                  cinemaId: Int,
+                  snacks: [SnackRequest],
+                  completion: @escaping (MBAResult<BaseResponse<MovieTicket>>) -> Void)
 }

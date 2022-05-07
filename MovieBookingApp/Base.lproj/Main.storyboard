@@ -1325,6 +1325,14 @@
                     <navigationItem key="navigationItem" id="ijo-mG-Rmw"/>
                     <connections>
                         <outlet property="imageMovie" destination="yO2-gy-0f7" id="GQc-hh-sYU"/>
+                        <outlet property="imgBarcode" destination="dg3-Xw-c8C" id="D34-l6-HbL"/>
+                        <outlet property="lblBookingNo" destination="xae-f5-Yec" id="Iu4-Le-DEa"/>
+                        <outlet property="lblDate" destination="QLT-fD-fZe" id="Lqt-zZ-yfK"/>
+                        <outlet property="lblMovieName" destination="dqU-H6-O3b" id="4AD-OW-Vo6"/>
+                        <outlet property="lblPrice" destination="MWi-3e-OOS" id="bRb-lF-D7v"/>
+                        <outlet property="lblRow" destination="U4w-sM-nbs" id="8ak-0y-qA1"/>
+                        <outlet property="lblSeat" destination="jug-Ho-mDf" id="vdl-Kx-zN8"/>
+                        <outlet property="lblTheater" destination="KFY-3H-cq6" id="dEy-gd-POz"/>
                         <outlet property="stackViewTicket" destination="kuJ-ch-QyW" id="XLS-kB-gbA"/>
                     </connections>
                 </viewController>
@@ -1477,6 +1485,7 @@
                     <navigationItem key="navigationItem" id="Qke-h0-sHz"/>
                     <connections>
                         <outlet property="cardCarousel" destination="qgE-Wf-EmD" id="Q83-mx-KCN"/>
+                        <outlet property="lblAmount" destination="kCn-Y1-kGz" id="4ad-8B-vXq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oqt-Sk-b7g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2243,7 +2252,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="back:" destination="2GV-Az-MDN" eventType="touchUpInside" id="kXe-6l-1St"/>
                                     <action selector="onClickAddNewTicket:" destination="2GV-Az-MDN" eventType="touchUpInside" id="SiF-ul-7Ec"/>
                                 </connections>
                             </button>
