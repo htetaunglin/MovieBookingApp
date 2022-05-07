@@ -15,6 +15,10 @@ class MovieSeatViewController: UIViewController{
     @IBOutlet weak var lblSelectedSeat: UILabel!
     @IBOutlet weak var btnBuyTicket: UIButton!
     
+    @IBOutlet weak var lblMovieName: UILabel!
+    @IBOutlet weak var lblCinema: UILabel!
+    @IBOutlet weak var lblTime: UILabel!
+    
     let seatModel: SeatModel = SeatModelImpl.shared
     
     var seats: [Seat] = [] {
@@ -56,6 +60,7 @@ class MovieSeatViewController: UIViewController{
         registerCollectionView()
         setDataSourceAndDelegate()
         fetchSeats()
+        dataBind()
     }
     
     func setDataSourceAndDelegate(){
@@ -67,18 +72,26 @@ class MovieSeatViewController: UIViewController{
         collectionViewSeat.register(UINib(nibName: String(describing: MovieSeatCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing:  MovieSeatCollectionViewCell.self))
     }
     
+    func dataBind(){
+        lblMovieName.text = MovieTicketVo.movie?.originalTitle ?? ""
+        let movieTime =  MovieTicketVo.movieTime
+        let time = movieTime?.date.toFormat(format: "EEEE, dd MMM")
+        lblCinema.text = movieTime?.cinema.name ?? ""
+        lblTime.text = "\(time ?? ""), \(movieTime?.timeSlot.startTime ?? "")"
+    }
+    
     func fetchSeats(){
-        seatModel.getSeat(timeSlotId: 1, date: "2022-5-13"){ result in
+        seatModel.getSeat(timeSlotId: 1, date: "2022-5-13"){[weak self] result in
             switch result {
             case .success(let seats):
-                self.seats = seats.reduce([Seat]()){ results, rowseat in
+                self?.seats = seats.reduce([Seat]()){ results, rowseat in
                     var l = results
                     l.append(contentsOf: rowseat)
                     return l
                 }
                 if !seats.isEmpty {
-                    self.columnCount = seats.first?.count ?? 0
-                    self.rowCount = seats.count
+                    self?.columnCount = seats.first?.count ?? 0
+                    self?.rowCount = seats.count
                 }
             case .failure(let error):
                 debugPrint(error)
@@ -87,7 +100,14 @@ class MovieSeatViewController: UIViewController{
     }
     
     @IBAction func onClickBuy(_ sender: Any) {
-        navigateToSnackViewController()
+        if selectedSeats.count != 0 {
+            MovieTicketVo.movieSeat = MovieSeatVo(seat: selectedSeats)
+            navigateToSnackViewController()
+        }
+    }
+    
+    deinit {
+        MovieTicketVo.movieSeat = nil
     }
 }
 

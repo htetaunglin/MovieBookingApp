@@ -71,10 +71,10 @@ class MovieDetailViewController: UIViewController{
     }
     
     private func fetchMovieById(_ id: Int){
-        movieModel.getMovieById(id: id){ result in
+        movieModel.getMovieById(id: id){[weak self] result in
             switch result {
             case .success(let movie):
-                self.movie = movie
+                self?.movie = movie
             case .failure(let error):
                 debugPrint(error)
             }
@@ -101,9 +101,15 @@ class MovieDetailViewController: UIViewController{
     }
     
     @IBAction func onClickGetYourTicket(_ sender: Any) {
-        navigateToMovieTimeViewController()
+        if let m = movie {
+            MovieTicketVo.movie = m
+            navigateToMovieTimeViewController()
+        }
     }
-
+    
+    deinit {
+        MovieTicketVo.movie = nil
+    }
 }
 
 extension MovieDetailViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{

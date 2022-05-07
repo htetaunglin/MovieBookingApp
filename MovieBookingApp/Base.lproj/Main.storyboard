@@ -678,19 +678,19 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Vc7-hh-F48">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="88.5"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Detective Pikachu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDw-Rf-ITT">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDw-Rf-ITT">
                                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="33.5"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="28"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Galaxy Cinema - Golden City" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WMQ-r1-tuX">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WMQ-r1-tuX">
                                                                 <rect key="frame" x="0.0" y="41.5" width="414" height="19.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                 <color key="textColor" name="movie_seat_taken_color"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wednesday, 10 May, 07:00 PM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gND-st-MwQ">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gND-st-MwQ">
                                                                 <rect key="frame" x="0.0" y="69" width="414" height="19.5"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="16"/>
                                                                 <nil key="textColor"/>
@@ -894,8 +894,11 @@
                         <outlet property="btnBuyTicket" destination="YSh-Rc-25I" id="bUK-gD-rgq"/>
                         <outlet property="collectionViewSeat" destination="7kK-Ff-b4m" id="WrN-it-BhE"/>
                         <outlet property="heightofCollectionViewSeat" destination="26K-Xp-4aE" id="Vq6-TE-Do4"/>
+                        <outlet property="lblCinema" destination="WMQ-r1-tuX" id="7re-Bb-FWo"/>
+                        <outlet property="lblMovieName" destination="kDw-Rf-ITT" id="jnM-NN-02r"/>
                         <outlet property="lblSelectedCount" destination="rjP-wQ-XnX" id="WEW-xd-0Td"/>
                         <outlet property="lblSelectedSeat" destination="8pK-vi-HEk" id="oZH-4g-SsE"/>
+                        <outlet property="lblTime" destination="gND-st-MwQ" id="AwL-BS-9lU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Cx-Oo-sWV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -954,7 +957,7 @@
                                                                     </label>
                                                                 </subviews>
                                                             </stackView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sub total : 40$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HKV-V5-215">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sub total : 0$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HKV-V5-215">
                                                                 <rect key="frame" x="20" y="91.5" width="374" height="19.5"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                                 <color key="textColor" systemColor="systemGreenColor"/>
@@ -1017,7 +1020,7 @@
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Pay $40.0">
+                                <buttonConfiguration key="configuration" style="plain" title="Pay $0.0">
                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="16"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
@@ -1045,9 +1048,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="f1g-af-X4h"/>
                     <connections>
+                        <outlet property="btnPay" destination="kJT-Ph-6cY" id="HuM-Vl-cAD"/>
                         <outlet property="comboSetTableView" destination="X5m-fD-upH" id="Jbo-Ze-mkq"/>
                         <outlet property="heightOfComboSetTableView" destination="7Xx-lm-bIs" id="TfU-TP-zpE"/>
                         <outlet property="heightOfPaymentTableView" destination="R5v-cf-uUo" id="K3l-8Z-fiQ"/>
+                        <outlet property="lblSubTotal" destination="HKV-V5-215" id="94X-nn-3g1"/>
                         <outlet property="paymentMethodTableView" destination="Grh-dE-M5Y" id="vqc-0x-bx7"/>
                         <outlet property="textFieldPromoCode" destination="aV0-9s-lQZ" id="rQK-bH-gbZ"/>
                     </connections>

@@ -31,4 +31,10 @@ protocol NetworkAgentProtocol {
     
     // MARK: - Seat
     func getSeats(token: String, timeSlotId: Int, date: String, completion: @escaping (MBAResult<BaseResponse<[[Seat]]>>) -> Void)
+    
+    // MARK: - Snack
+    func getSnacks(token: String, completion: @escaping (MBAResult<BaseResponse<[Snack]>>) -> Void)
+    
+    // MARK: - Payment method
+    func getPaymentMethod(token: String, completion: @escaping (MBAResult<BaseResponse<[PaymentMethod]>>) -> Void)
 }

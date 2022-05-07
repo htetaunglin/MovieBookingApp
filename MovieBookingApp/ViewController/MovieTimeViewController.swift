@@ -86,7 +86,7 @@ class MovieTimeViewController: UIViewController{
             collectionViewTimeSlot.reloadData()
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCells()
@@ -127,10 +127,6 @@ class MovieTimeViewController: UIViewController{
         self.view.layoutIfNeeded()
     }
     
-    @IBAction func onClickNext(_ sender: Any) {
-        navigateToMovieSeatViewController()
-    }
-    
     
     fileprivate func generateDateTime(){
         let calendar = NSCalendar.current
@@ -165,6 +161,17 @@ class MovieTimeViewController: UIViewController{
             }
         }
     }
+    
+    @IBAction func onClickNext(_ sender: Any) {
+        if chooseDate != nil && chooseCinema != nil && chooseTimeSlot != nil {
+            MovieTicketVo.movieTime = MovieTimeVo(date: chooseDate!, cinema: chooseCinema!, cinemaTimeSlot: chooseCinemaTimeSlot!, timeSlot: chooseTimeSlot!)
+            navigateToMovieSeatViewController()
+        }
+    }
+    
+    deinit {
+        MovieTicketVo.movieTime = nil
+    }
 }
 
 
@@ -186,7 +193,7 @@ extension MovieTimeViewController: UICollectionViewDataSource{
             cell.date = dates[indexPath.row]
             cell.isSelect = dates[indexPath.row] == chooseDate
             return cell;
-        }else if collectionView == collectionViewAvailableIn{
+        } else if collectionView == collectionViewAvailableIn{
             let cell = collectionView.dequeueCell(identifier: TimeCollectionViewCell.identifier, indexPath: indexPath) as TimeCollectionViewCell
             cell.isSelect = cinemas[indexPath.row].id == chooseCinema?.id
             cell.label.text = cinemas[indexPath.row].name

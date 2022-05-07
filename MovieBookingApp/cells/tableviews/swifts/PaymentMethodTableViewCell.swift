@@ -8,6 +8,16 @@
 import UIKit
 
 class PaymentMethodTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var lblPaymentName: UILabel!
+    @IBOutlet weak var lblPaymentDescription: UILabel!
+    
+    var paymentMethod: PaymentMethod? {
+        didSet {
+            lblPaymentName.text = paymentMethod?.name
+            lblPaymentDescription.text = paymentMethod?.paymentMethodDescription
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
