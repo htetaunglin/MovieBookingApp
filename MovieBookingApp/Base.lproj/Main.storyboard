@@ -673,7 +673,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KG4-PE-LQE">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="575.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="295.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Vc7-hh-F48">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="88.5"/>
@@ -699,10 +699,10 @@
                                                         </subviews>
                                                     </stackView>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7kK-Ff-b4m">
-                                                        <rect key="frame" x="0.0" y="96.5" width="414" height="280"/>
+                                                        <rect key="frame" x="0.0" y="96.5" width="414" height="0.0"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="280" id="26K-Xp-4aE"/>
+                                                            <constraint firstAttribute="height" id="26K-Xp-4aE"/>
                                                         </constraints>
                                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="s07-9X-UEX">
                                                             <size key="itemSize" width="128" height="128"/>
@@ -722,7 +722,7 @@
                                                         </cells>
                                                     </collectionView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="zg7-si-fuf">
-                                                        <rect key="frame" x="0.0" y="384.5" width="414" height="40"/>
+                                                        <rect key="frame" x="0.0" y="104.5" width="414" height="40"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="03x-AP-QKz">
                                                                 <rect key="frame" x="16" y="8" width="127.5" height="24"/>
@@ -800,7 +800,7 @@
                                                         <edgeInsets key="layoutMargins" top="8" left="16" bottom="8" right="16"/>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="pEj-iw-x0r">
-                                                        <rect key="frame" x="0.0" y="432.5" width="414" height="71"/>
+                                                        <rect key="frame" x="0.0" y="152.5" width="414" height="71"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6pi-mJ-dy5">
                                                                 <rect key="frame" x="16" y="8" width="382" height="19.5"/>
@@ -840,7 +840,7 @@
                                                         <edgeInsets key="layoutMargins" top="8" left="16" bottom="8" right="16"/>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aSI-10-0pd">
-                                                        <rect key="frame" x="0.0" y="511.5" width="414" height="64"/>
+                                                        <rect key="frame" x="0.0" y="231.5" width="414" height="64"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YSh-Rc-25I">
                                                                 <rect key="frame" x="16" y="8" width="382" height="48"/>

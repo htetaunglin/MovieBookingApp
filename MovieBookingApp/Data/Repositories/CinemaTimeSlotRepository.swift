@@ -11,8 +11,6 @@ import Foundation
 protocol CinemaTimeSlotRepository {
     func saveCinemaTimeSlots(movieId: Int, date: String, timeSlots: [CinemaTimeSlot])
     func getCinemaTimeSlotsByMovie(movieId: Int, date: String, completion: @escaping ([CinemaTimeSlot]) -> Void)
-//    func savePaymentMethods(methods: [PaymentMethod])
-//    func getPaymentMethods(completion: @escaping ([PaymentMethod]) -> Void)
 }
 
 class CinemaTimeSlotRepositoryImpl: BaseRepository, CinemaTimeSlotRepository {

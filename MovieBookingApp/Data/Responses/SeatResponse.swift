@@ -8,13 +8,27 @@ import Foundation
 // MARK: - Seat
 struct Seat: Codable {
     let id: Int
-    let type, seatName, symbol: String?
+    let type, seatName, symbol: String
     let price: Double?
     
     enum CodingKeys: String, CodingKey {
         case id, type
         case seatName = "seat_name"
         case symbol, price
+    }
+}
+
+extension Seat {
+    func toSeatObject(timeSlotId: Int, date: String) -> SeatObject {
+        let object = SeatObject()
+        object.seatID = "\(timeSlotId)\(date)\(id)\(symbol)\(seatName)"
+        object.id = id
+        object.type = type
+        object.seatName = seatName
+        object.symbol = symbol
+        object.price = price ?? 0
+        object.date = date
+        return object
     }
 }
 

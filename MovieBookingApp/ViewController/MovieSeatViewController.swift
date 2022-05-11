@@ -33,10 +33,10 @@ class MovieSeatViewController: UIViewController{
             
             var seatMap: [String: [Seat]] = [String: [Seat]]()
             selectedSeats.forEach { seat in
-                seatMap[seat.symbol!] = selectedSeats.filter{ $0.symbol == seat.symbol }
+                seatMap[seat.symbol] = selectedSeats.filter{ $0.symbol == seat.symbol }
             }
             lblSelectedSeat.text = seatMap.map{ row, value in
-                let numbers = value.map{ $0.seatName?.split(separator: "-").last?.description ?? "" }.joined(separator: ", ")
+                let numbers = value.map{ $0.seatName.split(separator: "-").last?.description ?? "" }.joined(separator: ", ")
                 return "\(row) Row/ \(numbers)"
             }.joined(separator: "\n")
             
@@ -84,11 +84,7 @@ class MovieSeatViewController: UIViewController{
         seatModel.getSeat(timeSlotId: MovieTicketVo.movieTime?.getCinemaDayTimeSlotId() ?? 0, date: MovieTicketVo.movieTime?.getBookingDate() ?? ""){[weak self] result in
             switch result {
             case .success(let seats):
-                self?.seats = seats.reduce([Seat]()){ results, rowseat in
-                    var l = results
-                    l.append(contentsOf: rowseat)
-                    return l
-                }
+                self?.seats = SeatUtils.to1DArraySeats(seats)
                 if !seats.isEmpty {
                     self?.columnCount = seats.first?.count ?? 0
                     self?.rowCount = seats.count

@@ -29,12 +29,12 @@ struct MovieTimeVo {
     
     // TO USE Checkout
     func getCinemaId() -> Int {
-        return cinema.id ?? 0
+        return cinema.id
     }
     
     // TO USE Checkout
     func getCinemaDayTimeSlotId() -> Int {
-        return timeSlot.cinemaDayTimeslotID ?? 0
+        return timeSlot.cinemaDayTimeslotID
     }
     
     // TO USE Checkout
@@ -58,12 +58,12 @@ struct MovieSeatVo {
     
     // TO USE Checkout
     func getRows() -> [String] {
-        return Array(Set(seat.map{ $0.symbol ?? "" }))
+        return Array(Set(seat.map{ $0.symbol }))
     }
     
     // TO USE Checkout
     func getSeatNumbers() -> [String] {
-        return seat.map{ $0.seatName ?? "" }
+        return seat.map{ $0.seatName }
     }
 }
 
@@ -80,7 +80,7 @@ struct SnackVo {
     func getSnackDictionary() -> [[String: Int]]{
         return snacks.map {
             return [
-                "id": $0.key.id ?? 0,
+                "id": $0.key.id,
                 "quantity": $0.value
             ]
         }

@@ -34,6 +34,9 @@
 		99344C192826B46500C019D6 /* TicketRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99344C182826B46500C019D6 /* TicketRequest.swift */; };
 		99344C1B2826B7FF00C019D6 /* TicketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99344C1A2826B7FF00C019D6 /* TicketModel.swift */; };
 		99353423281A659100CD1813 /* DrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99353422281A659100CD1813 /* DrawerViewController.swift */; };
+		993A66E2282BF0E300C3B570 /* SeatObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993A66E1282BF0E300C3B570 /* SeatObject.swift */; };
+		993D45C0282BF73E005AF767 /* SeatRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993D45BF282BF73E005AF767 /* SeatRepository.swift */; };
+		993D45C2282C04F6005AF767 /* SeatUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993D45C1282C04F6005AF767 /* SeatUtils.swift */; };
 		9947512827CB46770018396D /* PayCardCarouselCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9947512627CB46770018396D /* PayCardCarouselCollectionViewCell.swift */; };
 		9947512927CB46770018396D /* PayCardCarouselCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9947512727CB46770018396D /* PayCardCarouselCollectionViewCell.xib */; };
 		9947512B27CB532B0018396D /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9947512A27CB532B0018396D /* UILabel+Extension.swift */; };
@@ -130,6 +133,9 @@
 		99344C182826B46500C019D6 /* TicketRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketRequest.swift; sourceTree = "<group>"; };
 		99344C1A2826B7FF00C019D6 /* TicketModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketModel.swift; sourceTree = "<group>"; };
 		99353422281A659100CD1813 /* DrawerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerViewController.swift; sourceTree = "<group>"; };
+		993A66E1282BF0E300C3B570 /* SeatObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatObject.swift; sourceTree = "<group>"; };
+		993D45BF282BF73E005AF767 /* SeatRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatRepository.swift; sourceTree = "<group>"; };
+		993D45C1282C04F6005AF767 /* SeatUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatUtils.swift; sourceTree = "<group>"; };
 		9947512627CB46770018396D /* PayCardCarouselCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayCardCarouselCollectionViewCell.swift; sourceTree = "<group>"; };
 		9947512727CB46770018396D /* PayCardCarouselCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PayCardCarouselCollectionViewCell.xib; sourceTree = "<group>"; };
 		9947512A27CB532B0018396D /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
@@ -397,6 +403,7 @@
 			isa = PBXGroup;
 			children = (
 				99ACF15027C0C9C300DC3AFC /* AppConstants.swift */,
+				993D45C1282C04F6005AF767 /* SeatUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -506,6 +513,7 @@
 				99FCA2EC28278FDC0018AD1B /* SnackRepository.swift */,
 				99FCA2F22827929E0018AD1B /* PaymentMethodRepository.swift */,
 				99FCA2F8282798480018AD1B /* CinemaTimeSlotRepository.swift */,
+				993D45BF282BF73E005AF767 /* SeatRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -523,6 +531,7 @@
 				99FCA2F02827920A0018AD1B /* PaymentMethodObject.swift */,
 				99FCA2F4282794F90018AD1B /* CinemaTimeSlotObject.swift */,
 				99FCA2F6282795240018AD1B /* TimeSlotObject.swift */,
+				993A66E1282BF0E300C3B570 /* SeatObject.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -684,6 +693,7 @@
 				99FCA2F32827929E0018AD1B /* PaymentMethodRepository.swift in Sources */,
 				9954609428250C7D0092AA66 /* SeatModel.swift in Sources */,
 				9982389427C94F7D00CDFBF5 /* PaymentViewController.swift in Sources */,
+				993D45C2282C04F6005AF767 /* SeatUtils.swift in Sources */,
 				99E9CEBA2813E38500794996 /* UserModel.swift in Sources */,
 				992C258427C2140B00A43AF6 /* HomeViewController.swift in Sources */,
 				9947512827CB46770018396D /* PayCardCarouselCollectionViewCell.swift in Sources */,
@@ -695,6 +705,7 @@
 				99997C83282569A7002A30E3 /* SnackModel.swift in Sources */,
 				99780BB827C3FEC200DA91EB /* RatingControl.swift in Sources */,
 				9929D84327C8A3E4002B72DE /* UITableView+Extension.swift in Sources */,
+				993D45C0282BF73E005AF767 /* SeatRepository.swift in Sources */,
 				9923184327C3571E0073E2DF /* UIViewController+Extension.swift in Sources */,
 				99FCA2DB2826D1CD0018AD1B /* MovieObject.swift in Sources */,
 				99E9CEC02813E41100794996 /* BaseModel.swift in Sources */,
@@ -715,6 +726,7 @@
 				99BDBE8527BD5CF900AAF1A5 /* MovieTimeViewController.swift in Sources */,
 				99997C8528256DDB002A30E3 /* PaymentMethodResponse.swift in Sources */,
 				9923184727C3790D0073E2DF /* MovieDetailViewController.swift in Sources */,
+				993A66E2282BF0E300C3B570 /* SeatObject.swift in Sources */,
 				9969FB1227BF5AA300946B7E /* DaysCollectionViewCell.swift in Sources */,
 				99FCA2E928277CF10018AD1B /* BelongToTypeObject.swift in Sources */,
 				99E9CEB72813C9B600794996 /* NetworkAgent.swift in Sources */,

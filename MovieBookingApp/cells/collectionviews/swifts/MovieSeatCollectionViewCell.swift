@@ -39,7 +39,7 @@ class MovieSeatCollectionViewCell: UICollectionViewCell {
             viewContainerMovieSeat.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
             viewContainerMovieSeat.backgroundColor = UIColor.init(named: isSelected ? "primary_color":"movie_seat_available_color") ?? UIColor.gray
             if isSelected {
-                lblMovieSeatTitle.text = seat.seatName?.split(separator: "-").last?.description ?? ""
+                lblMovieSeatTitle.text = seat.seatName.split(separator: "-").last?.description ?? ""
                 lblMovieSeatTitle.textColor = UIColor.white
                 lblMovieSeatTitle.font = UIFont.systemFont(ofSize: 14, weight: .bold)
             }

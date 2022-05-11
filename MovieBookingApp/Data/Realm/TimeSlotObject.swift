@@ -13,6 +13,8 @@ class TimeSlotObject: Object {
     var cinemaDayTimeslotID: Int
     @Persisted
     var startTime: String?
+    @Persisted
+    var seats: List<SeatObject>
 }
 
 extension TimeSlotObject {
