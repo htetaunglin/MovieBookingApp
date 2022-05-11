@@ -23,18 +23,12 @@ class MovieDetailViewController: UIViewController{
     
     let movieModel: MovieModel = MovieModelImpl.shared
     
-    var movieId: Int? {
-        didSet {
-            if let id = movieId {
-                fetchMovieById(id)
-            }
-        }
-    }
+    var movieId: Int?
     
     var movie: Movie? {
         didSet {
             if let m = movie {
-                lblMovieName.text = m.originalTitle
+                lblMovieName.text = m.originalTitle ?? ""
                 if let duration = m.runtime {
                     lblDuration.text = "\(duration / 60)hr \(duration % 60)min"
                 } else {
@@ -68,6 +62,10 @@ class MovieDetailViewController: UIViewController{
         roundCornerOfViewDetail()
         setUpCollectionViewMovieType()
         setUpCollectionViewCast()
+     
+        if let id = movieId {
+            fetchMovieById(id)
+        }
     }
     
     private func fetchMovieById(_ id: Int){

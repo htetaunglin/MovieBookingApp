@@ -7,7 +7,7 @@ import Foundation
 
 // MARK: - User
 struct User: Codable {
-    let id: Int?
+    let id: Int
     let name, email, phone: String?
     let totalExpense: Int?
     let profileImage: String?
@@ -21,5 +21,21 @@ struct User: Codable {
         case googleId = "google_id"
         case facebookId = "facebook_id"
         case paymentCard = "cards"
+    }
+}
+
+extension User {
+    func toUserObject() -> UserObject {
+        let userObj = UserObject()
+        userObj.id = id
+        userObj.name = name
+        userObj.email = email
+        userObj.phone = phone
+        userObj.totalExpense = totalExpense
+        userObj.profileImage = profileImage
+        userObj.googleId = googleId
+        userObj.facebookId = facebookId
+        userObj.paymentCard.append(objectsIn: paymentCard?.map{ $0.toPaymentCardObject() } ?? [])
+        return userObj
     }
 }

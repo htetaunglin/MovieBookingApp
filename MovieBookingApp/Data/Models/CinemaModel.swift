@@ -16,10 +16,20 @@ class CinemaModelImpl: BaseModel, CinemaModel {
     static let shared = CinemaModelImpl()
     private override init(){}
     
+    private let cinemaRepo: CinemaRepository = CinemaRepositoryImpl.shared
+    private let timeSlotRepo: CinemaTimeSlotRepository = CinemaTimeSlotRepositoryImpl.shared
+    
     func getCinemas(completion: @escaping (MBAResult<[Cinema]>) -> Void) {
-        networkAgent.getCinemas{ result in
+        // Get Data From Realm
+        cinemaRepo.getCinemas {
+            completion(.success($0))
+        }
+        // Get Data From Network
+        networkAgent.getCinemas{[weak self] result in
             switch result {
             case .success(let response):
+                // Save data to Realm
+                self?.cinemaRepo.saveCinemas(cinemas: response.data ?? [])
                 completion(.success(response.data ?? []))
             case .failure(let error):
                 completion(.failure(error))
@@ -28,10 +38,14 @@ class CinemaModelImpl: BaseModel, CinemaModel {
     }
     
     func getTimeSlots(movieId: Int, date: String, completion: @escaping (MBAResult<[CinemaTimeSlot]>) -> Void) {
+        timeSlotRepo.getCinemaTimeSlotsByMovie(movieId: movieId, date: date) {
+            completion(.success($0))
+        }
         if let token = UserModelImpl.userToken {
-            networkAgent.getTimeSlots(token: token, movieId: movieId, date: date){ result in
+            networkAgent.getTimeSlots(token: token, movieId: movieId, date: date){ [weak self] result in
                 switch result {
                 case .success(let response):
+                    self?.timeSlotRepo.saveCinemaTimeSlots(movieId: movieId, date: date, timeSlots: (response.data ?? []))
                     completion(.success(response.data ?? []))
                 case .failure(let error):
                     completion(.failure(error))

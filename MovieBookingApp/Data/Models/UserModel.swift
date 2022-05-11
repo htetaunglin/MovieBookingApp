@@ -16,6 +16,8 @@ protocol UserModel {
 class UserModelImpl: BaseModel, UserModel {
     static let shared = UserModelImpl()
     private override init(){}
+    
+    private let userRepo: UserRepository = UserRepositoryImpl.shared
 
     var user: User?
     
@@ -27,12 +29,20 @@ class UserModelImpl: BaseModel, UserModel {
     }
     
     func getCurrentUser(completion: @escaping (MBAResult<User>) -> Void) {
+        if let currentUser = user {
+            userRepo.getUser(id: currentUser.id){
+                if let u = $0 {
+                    completion(.success(u))
+                }
+            }
+        }
         if let token = UserModelImpl.userToken{
-            networkAgent.getProfile(token: token){ result in
+            networkAgent.getProfile(token: token){ [weak self] result in
                 switch result {
                 case .success(let response):
                     if let user = response.data {
-                        self.user = user
+                        self?.userRepo.saveUser(user: user)
+                        self?.user = user
                         completion(.success(user))
                     } else {
                         completion(.failure("User not found"))

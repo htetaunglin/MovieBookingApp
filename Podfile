@@ -11,4 +11,5 @@ target 'MovieBookingApp' do
   pod 'UPCarouselFlowLayout'
   pod 'Alamofire', '~> 5.5'
   pod 'SDWebImage', '~> 5.0'
+  pod 'RealmSwift'
 end

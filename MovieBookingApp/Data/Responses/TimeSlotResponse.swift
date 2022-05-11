@@ -7,7 +7,7 @@ import Foundation
 
 // MARK: - CinemaTimeSlot
 struct CinemaTimeSlot: Codable {
-    let cinemaID: Int?
+    let cinemaID: Int
     let cinema: String?
     let timeslots: [Timeslot]?
 
@@ -17,13 +17,36 @@ struct CinemaTimeSlot: Codable {
     }
 }
 
+extension CinemaTimeSlot {
+    func toCinemaTimeSlotObject(movieId: Int, date: String) -> CinemaTimeSlotObject {
+        let object = CinemaTimeSlotObject()
+        object.id = "\(movieId)\(cinemaID)\(date)"
+        object.movieId = movieId
+        object.date = date
+        object.cinemaID = cinemaID
+        object.cinema = cinema
+        object.timeslots.append(objectsIn: timeslots?.map{ $0.toTimeSlotObject() } ?? [])
+        return object
+    }
+}
+
 // MARK: - Timeslot
 struct Timeslot: Codable {
-    let cinemaDayTimeslotID: Int?
+    let cinemaDayTimeslotID: Int
     let startTime: String?
 
     enum CodingKeys: String, CodingKey {
         case cinemaDayTimeslotID = "cinema_day_timeslot_id"
         case startTime = "start_time"
+    }
+}
+
+
+extension Timeslot {
+    func toTimeSlotObject() -> TimeSlotObject {
+        let object = TimeSlotObject()
+        object.cinemaDayTimeslotID = cinemaDayTimeslotID
+        object.startTime = startTime
+        return object
     }
 }

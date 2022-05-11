@@ -21,3 +21,15 @@ struct PaymentCard: Codable {
         case expireDate = "expiration_date"
     }
 }
+
+extension PaymentCard {
+    func toPaymentCardObject() -> PaymentCardObject {
+        let cardObj = PaymentCardObject()
+        cardObj.id = id
+        cardObj.cardHolder = cardHolder
+        cardObj.cardNumber = cardNumber
+        cardObj.cardType = cardType
+        cardObj.expireDate = expireDate
+        return cardObj
+    }
+}

@@ -13,7 +13,7 @@ import Foundation
 
 // MARK: - Movie
 struct Movie: Codable {
-    let id: Int?
+    let id: Int
     let originalTitle, releaseDate: String?
     let genres: [String]?
     let overview: String?
@@ -21,7 +21,7 @@ struct Movie: Codable {
     let runtime: Int?
     let posterPath: String?
     let casts: [Cast]?
-
+    
     enum CodingKeys: String, CodingKey {
         case id
         case originalTitle = "original_title"
@@ -32,18 +32,35 @@ struct Movie: Codable {
     }
 }
 
+extension Movie {
+    func toMovieObject() -> MovieObject {
+        let movieObj = MovieObject()
+        movieObj.id = id
+        movieObj.originalTitle = originalTitle
+        movieObj.releaseDate = releaseDate
+        movieObj.genres.append(objectsIn: genres ?? [])
+        movieObj.overview = overview
+        movieObj.rating = rating
+        movieObj.runtime = runtime
+        movieObj.posterPath = posterPath
+        movieObj.casts.append(objectsIn: casts?.map{ $0.toCastObject() } ?? [])
+        return movieObj
+    }
+}
+
 
 // MARK: - Cast
 struct Cast: Codable {
     let adult: Bool?
-    let gender, id: Int?
+    let gender: Int?
+    let id: Int
     let knownForDepartment, name, originalName: String?
     let popularity: Double?
     let profilePath: String?
     let castID: Int?
     let character, creditID: String?
     let order: Int?
-
+    
     enum CodingKeys: String, CodingKey {
         case adult, gender, id
         case knownForDepartment = "known_for_department"
@@ -58,3 +75,21 @@ struct Cast: Codable {
     }
 }
 
+extension Cast {
+    func toCastObject() -> CastObject {
+        let castObj = CastObject()
+        castObj.adult = adult
+        castObj.gender = gender
+        castObj.id = id
+        castObj.knownForDepartment = knownForDepartment
+        castObj.name = name
+        castObj.originalName = originalName
+        castObj.popularity = popularity
+        castObj.profilePath = profilePath
+        castObj.castID = castID
+        castObj.character = character
+        castObj.creditID = creditID
+        castObj.order = order
+        return castObj
+    }
+}

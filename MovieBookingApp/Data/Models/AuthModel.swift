@@ -23,6 +23,8 @@ class AuthModelImpl: BaseModel, AuthModel {
     static let shared = AuthModelImpl()
     private override init(){}
     
+    private let userRepo: UserRepository = UserRepositoryImpl.shared
+    
     static var isLoggedIn: Bool {
         get {
             return UserModelImpl.userToken != nil
@@ -30,13 +32,14 @@ class AuthModelImpl: BaseModel, AuthModel {
     }
     
     func signUpWithEmail(name: String, email: String, phone: String, password: String, completion: @escaping (MBAResult<User>) -> Void) {
-        networkAgent.signUpWithEmail(name: name, email: email, phone: phone, password: password) { result in
+        networkAgent.signUpWithEmail(name: name, email: email, phone: phone, password: password) { [weak self] result in
             switch result {
             case .success(let response):
                 // Set to User Default
                 let defaults = UserDefaults.standard
                 defaults.set(response.token, forKey: "user-token")
                 if let user = response.data {
+                    self?.userRepo.saveUser(user: user)
                     completion(.success(user))
                 } else {
                     completion(.failure("User not found"))
@@ -57,13 +60,14 @@ class AuthModelImpl: BaseModel, AuthModel {
     }
     
     func loginWithEmail(email: String, password: String, completion: @escaping (MBAResult<User>) -> Void) {
-        networkAgent.loginWithEmail(email: email, password: password){ result in
+        networkAgent.loginWithEmail(email: email, password: password){[weak self] result in
             switch result {
             case .success(let response):
                 // Set to User Default
                 let defaults = UserDefaults.standard
                 defaults.set(response.token, forKey: "user-token")
                 if let user = response.data {
+                    self?.userRepo.saveUser(user: user)
                     completion(.success(user))
                 } else {
                     completion(.failure("User not found"))

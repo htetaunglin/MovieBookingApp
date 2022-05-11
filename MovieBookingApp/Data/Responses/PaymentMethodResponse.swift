@@ -7,11 +7,21 @@ import Foundation
 
 // MARK: - PaymentMethod
 struct PaymentMethod: Codable {
-    let id: Int?
+    let id: Int
     let name, paymentMethodDescription: String?
 
     enum CodingKeys: String, CodingKey {
         case id, name
         case paymentMethodDescription = "description"
+    }
+}
+
+extension PaymentMethod {
+    func toPaymentMethodObject() -> PaymentMethodObject {
+        let object = PaymentMethodObject()
+        object.id = id
+        object.name = name
+        object.paymentMethodDescription = paymentMethodDescription
+        return object
     }
 }

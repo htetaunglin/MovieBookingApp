@@ -7,7 +7,7 @@ import Foundation
 
 // MARK: - Seat
 struct Seat: Codable {
-    let id: Int?
+    let id: Int
     let type, seatName, symbol: String?
     let price: Double?
     

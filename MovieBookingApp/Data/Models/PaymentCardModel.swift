@@ -17,7 +17,6 @@ class PaymentCardModelImpl: BaseModel, PaymentCardModel {
     private override init(){}
     
     func createCard(cardNo: String, holder: String, expire: String, cvc: String, completion: @escaping (MBAResult<[PaymentCard]>) -> Void) {
-        
         if let token = UserModelImpl.userToken {
             networkAgent.createPaymentCard(token: token, cardNumber: cardNo, holder: holder, expire: expire, cvc: cvc){ result in
                 switch result {

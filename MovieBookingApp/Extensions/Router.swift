@@ -42,9 +42,9 @@ extension UIViewController{
     
     func navigateMovieDetailViewController(movie: Movie?){
         guard let vc = UIStoryboard.mainStoryBoard().instantiateViewController(identifier: MovieDetailViewController.identifier) as? MovieDetailViewController else {return}
-//        vc.movie = movie
         vc.movieId = movie?.id
         self.navigationController?.pushViewController(vc, animated: true)
+        
     }
     
     func navigateToMovieTimeViewController(){

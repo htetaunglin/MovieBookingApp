@@ -82,6 +82,22 @@
 		99E9CEC22813E47100794996 /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E9CEC12813E47100794996 /* AuthModel.swift */; };
 		99F0285227C25008009F6256 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F0285127C25008009F6256 /* AuthViewController.swift */; };
 		99F9A9DB281D3B890092E6A3 /* CinemaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F9A9DA281D3B890092E6A3 /* CinemaModel.swift */; };
+		99FCA2DB2826D1CD0018AD1B /* MovieObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FCA2DA2826D1CD0018AD1B /* MovieObject.swift */; };
+		99FCA2DD2826D22A0018AD1B /* CastObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FCA2DC2826D22A0018AD1B /* CastObject.swift */; };
+		99FCA2DF2826D5450018AD1B /* PaymentCardObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FCA2DE2826D5450018AD1B /* PaymentCardObject.swift */; };
+		99FCA2E12826D61C0018AD1B /* UserObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FCA2E02826D61C0018AD1B /* UserObject.swift */; };
+		99FCA2E32826D7010018AD1B /* CinemaObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FCA2E22826D7010018AD1B /* CinemaObject.swift */; };
+		99FCA2E52826DA4B0018AD1B /* BaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FCA2E42826DA4B0018AD1B /* BaseRepository.swift */; };
+		99FCA2E728277C370018AD1B /* MovieRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FCA2E628277C370018AD1B /* MovieRepository.swift */; };
+		99FCA2E928277CF10018AD1B /* BelongToTypeObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FCA2E828277CF10018AD1B /* BelongToTypeObject.swift */; };
+		99FCA2EB28278C9E0018AD1B /* CinemaRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FCA2EA28278C9E0018AD1B /* CinemaRepository.swift */; };
+		99FCA2ED28278FDC0018AD1B /* SnackRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FCA2EC28278FDC0018AD1B /* SnackRepository.swift */; };
+		99FCA2EF28278FF90018AD1B /* SnackObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FCA2EE28278FF90018AD1B /* SnackObject.swift */; };
+		99FCA2F12827920A0018AD1B /* PaymentMethodObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FCA2F02827920A0018AD1B /* PaymentMethodObject.swift */; };
+		99FCA2F32827929E0018AD1B /* PaymentMethodRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FCA2F22827929E0018AD1B /* PaymentMethodRepository.swift */; };
+		99FCA2F5282794F90018AD1B /* CinemaTimeSlotObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FCA2F4282794F90018AD1B /* CinemaTimeSlotObject.swift */; };
+		99FCA2F7282795240018AD1B /* TimeSlotObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FCA2F6282795240018AD1B /* TimeSlotObject.swift */; };
+		99FCA2F9282798480018AD1B /* CinemaTimeSlotRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FCA2F8282798480018AD1B /* CinemaTimeSlotRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -162,6 +178,22 @@
 		99E9CEC12813E47100794996 /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
 		99F0285127C25008009F6256 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		99F9A9DA281D3B890092E6A3 /* CinemaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaModel.swift; sourceTree = "<group>"; };
+		99FCA2DA2826D1CD0018AD1B /* MovieObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieObject.swift; sourceTree = "<group>"; };
+		99FCA2DC2826D22A0018AD1B /* CastObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastObject.swift; sourceTree = "<group>"; };
+		99FCA2DE2826D5450018AD1B /* PaymentCardObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCardObject.swift; sourceTree = "<group>"; };
+		99FCA2E02826D61C0018AD1B /* UserObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserObject.swift; sourceTree = "<group>"; };
+		99FCA2E22826D7010018AD1B /* CinemaObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaObject.swift; sourceTree = "<group>"; };
+		99FCA2E42826DA4B0018AD1B /* BaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRepository.swift; sourceTree = "<group>"; };
+		99FCA2E628277C370018AD1B /* MovieRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRepository.swift; sourceTree = "<group>"; };
+		99FCA2E828277CF10018AD1B /* BelongToTypeObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BelongToTypeObject.swift; sourceTree = "<group>"; };
+		99FCA2EA28278C9E0018AD1B /* CinemaRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaRepository.swift; sourceTree = "<group>"; };
+		99FCA2EC28278FDC0018AD1B /* SnackRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackRepository.swift; sourceTree = "<group>"; };
+		99FCA2EE28278FF90018AD1B /* SnackObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackObject.swift; sourceTree = "<group>"; };
+		99FCA2F02827920A0018AD1B /* PaymentMethodObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodObject.swift; sourceTree = "<group>"; };
+		99FCA2F22827929E0018AD1B /* PaymentMethodRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodRepository.swift; sourceTree = "<group>"; };
+		99FCA2F4282794F90018AD1B /* CinemaTimeSlotObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaTimeSlotObject.swift; sourceTree = "<group>"; };
+		99FCA2F6282795240018AD1B /* TimeSlotObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSlotObject.swift; sourceTree = "<group>"; };
+		99FCA2F8282798480018AD1B /* CinemaTimeSlotRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaTimeSlotRepository.swift; sourceTree = "<group>"; };
 		D83BB0939584A5A8E0B37ADA /* Pods-MovieBookingApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieBookingApp.release.xcconfig"; path = "Target Support Files/Pods-MovieBookingApp/Pods-MovieBookingApp.release.xcconfig"; sourceTree = "<group>"; };
 		E1373918ED9B240B751CDEB1 /* Pods-MovieBookingApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieBookingApp.debug.xcconfig"; path = "Target Support Files/Pods-MovieBookingApp/Pods-MovieBookingApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -251,7 +283,6 @@
 		992CC6A527BA236500D991A9 /* MovieBookingApp */ = {
 			isa = PBXGroup;
 			children = (
-				994AC278281A768B00EDAD57 /* Realm */,
 				99E9CEB02813C62B00794996 /* Contstants */,
 				99E9CEA92812F81C00794996 /* Network */,
 				99780BB627C3FEAD00DA91EB /* Components */,
@@ -277,13 +308,6 @@
 				99344C182826B46500C019D6 /* TicketRequest.swift */,
 			);
 			path = Requests;
-			sourceTree = "<group>";
-		};
-		994AC278281A768B00EDAD57 /* Realm */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Realm;
 			sourceTree = "<group>";
 		};
 		9969FB0B27BF5A4B00946B7E /* cells */ = {
@@ -352,6 +376,7 @@
 		99ACF14A27C0C90000DC3AFC /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				99FCA2D72826D19B0018AD1B /* Realm */,
 				99E9CEBB2813E39F00794996 /* Repositories */,
 				99E9CEB82813E37500794996 /* Models */,
 				99E9CEB32813C95800794996 /* Responses */,
@@ -475,8 +500,31 @@
 			isa = PBXGroup;
 			children = (
 				99E9CEBC2813E3A800794996 /* UserRepository.swift */,
+				99FCA2E42826DA4B0018AD1B /* BaseRepository.swift */,
+				99FCA2E628277C370018AD1B /* MovieRepository.swift */,
+				99FCA2EA28278C9E0018AD1B /* CinemaRepository.swift */,
+				99FCA2EC28278FDC0018AD1B /* SnackRepository.swift */,
+				99FCA2F22827929E0018AD1B /* PaymentMethodRepository.swift */,
+				99FCA2F8282798480018AD1B /* CinemaTimeSlotRepository.swift */,
 			);
 			path = Repositories;
+			sourceTree = "<group>";
+		};
+		99FCA2D72826D19B0018AD1B /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				99FCA2DA2826D1CD0018AD1B /* MovieObject.swift */,
+				99FCA2DC2826D22A0018AD1B /* CastObject.swift */,
+				99FCA2DE2826D5450018AD1B /* PaymentCardObject.swift */,
+				99FCA2E02826D61C0018AD1B /* UserObject.swift */,
+				99FCA2E22826D7010018AD1B /* CinemaObject.swift */,
+				99FCA2E828277CF10018AD1B /* BelongToTypeObject.swift */,
+				99FCA2EE28278FF90018AD1B /* SnackObject.swift */,
+				99FCA2F02827920A0018AD1B /* PaymentMethodObject.swift */,
+				99FCA2F4282794F90018AD1B /* CinemaTimeSlotObject.swift */,
+				99FCA2F6282795240018AD1B /* TimeSlotObject.swift */,
+			);
+			path = Realm;
 			sourceTree = "<group>";
 		};
 		A7F8EB8B51F2895CB3D8121C /* Frameworks */ = {
@@ -615,18 +663,25 @@
 				9947512B27CB532B0018396D /* UILabel+Extension.swift in Sources */,
 				99ACF14827C0C80B00DC3AFC /* MovieSeatCollectionViewCell.swift in Sources */,
 				997662B627C0EBF800757397 /* GetStartedViewController.swift in Sources */,
+				99FCA2E12826D61C0018AD1B /* UserObject.swift in Sources */,
 				9929D84627C8A5F0002B72DE /* FoodTableViewCell.swift in Sources */,
 				9982389227C9482F00CDFBF5 /* TicketViewController.swift in Sources */,
 				99997C892825970B002A30E3 /* MovieTicketVo.swift in Sources */,
 				9996523927C9FC62008190BC /* Router.swift in Sources */,
+				99FCA2DD2826D22A0018AD1B /* CastObject.swift in Sources */,
 				99997C8B28264197002A30E3 /* PaymentCardResponse.swift in Sources */,
 				99E9CEB52813C96900794996 /* AuthResponse.swift in Sources */,
 				99ACF14527C0B9EC00DC3AFC /* MovieSeatViewController.swift in Sources */,
 				9923184127C357020073E2DF /* UITextField+Extension.swift in Sources */,
 				9912E89B281BE57C00DB1D87 /* BaseResponse.swift in Sources */,
 				99997C8728256DFF002A30E3 /* PaymentMethodModel.swift in Sources */,
+				99FCA2F7282795240018AD1B /* TimeSlotObject.swift in Sources */,
+				99FCA2ED28278FDC0018AD1B /* SnackRepository.swift in Sources */,
 				99344C142826AE1D00C019D6 /* MovieTicketResponse.swift in Sources */,
+				99FCA2F5282794F90018AD1B /* CinemaTimeSlotObject.swift in Sources */,
 				9929D84027C8A064002B72DE /* ComboSetTableViewCell.swift in Sources */,
+				99FCA2E32826D7010018AD1B /* CinemaObject.swift in Sources */,
+				99FCA2F32827929E0018AD1B /* PaymentMethodRepository.swift in Sources */,
 				9954609428250C7D0092AA66 /* SeatModel.swift in Sources */,
 				9982389427C94F7D00CDFBF5 /* PaymentViewController.swift in Sources */,
 				99E9CEBA2813E38500794996 /* UserModel.swift in Sources */,
@@ -635,26 +690,33 @@
 				9969FB1627BF604E00946B7E /* TimeCollectionViewCell.swift in Sources */,
 				99780BBB27C400F500DA91EB /* MovieTypeCollectionViewCell.swift in Sources */,
 				99F0285227C25008009F6256 /* AuthViewController.swift in Sources */,
+				99FCA2EF28278FF90018AD1B /* SnackObject.swift in Sources */,
+				99FCA2E52826DA4B0018AD1B /* BaseRepository.swift in Sources */,
 				99997C83282569A7002A30E3 /* SnackModel.swift in Sources */,
 				99780BB827C3FEC200DA91EB /* RatingControl.swift in Sources */,
 				9929D84327C8A3E4002B72DE /* UITableView+Extension.swift in Sources */,
 				9923184327C3571E0073E2DF /* UIViewController+Extension.swift in Sources */,
+				99FCA2DB2826D1CD0018AD1B /* MovieObject.swift in Sources */,
 				99E9CEC02813E41100794996 /* BaseModel.swift in Sources */,
 				992CC6A727BA236500D991A9 /* AppDelegate.swift in Sources */,
 				99E9CEC22813E47100794996 /* AuthModel.swift in Sources */,
 				99E213D82822FB930097A50E /* Date+Extension.swift in Sources */,
+				99FCA2DF2826D5450018AD1B /* PaymentCardObject.swift in Sources */,
 				99E9CEB22813C63800794996 /* StringConstants.swift in Sources */,
 				9923183F27C356E00073E2DF /* UIView+Extension.swift in Sources */,
 				9923184527C357380073E2DF /* UICollectionView+Extension.swift in Sources */,
+				99FCA2EB28278C9E0018AD1B /* CinemaRepository.swift in Sources */,
 				994AC27C281AE5A300EDAD57 /* MovieModel.swift in Sources */,
 				9954609228250C450092AA66 /* SeatResponse.swift in Sources */,
 				99E9CEAD2812F8A000794996 /* NetworkEndPoint.swift in Sources */,
 				9982389627C9544800CDFBF5 /* AddNewCardViewController.swift in Sources */,
+				99FCA2F12827920A0018AD1B /* PaymentMethodObject.swift in Sources */,
 				99A4906B27C75FB700FF16A7 /* SnackViewController.swift in Sources */,
 				99BDBE8527BD5CF900AAF1A5 /* MovieTimeViewController.swift in Sources */,
 				99997C8528256DDB002A30E3 /* PaymentMethodResponse.swift in Sources */,
 				9923184727C3790D0073E2DF /* MovieDetailViewController.swift in Sources */,
 				9969FB1227BF5AA300946B7E /* DaysCollectionViewCell.swift in Sources */,
+				99FCA2E928277CF10018AD1B /* BelongToTypeObject.swift in Sources */,
 				99E9CEB72813C9B600794996 /* NetworkAgent.swift in Sources */,
 				994AC27E281AE64400EDAD57 /* MovieResponse.swift in Sources */,
 				99997C8128256992002A30E3 /* SnackResponse.swift in Sources */,
@@ -662,8 +724,10 @@
 				9929D84A27C90B75002B72DE /* PaymentMethodTableViewCell.swift in Sources */,
 				99997C8D282641F7002A30E3 /* PaymentCardModel.swift in Sources */,
 				99E213D62822F8BA0097A50E /* TimeSlotResponse.swift in Sources */,
+				99FCA2E728277C370018AD1B /* MovieRepository.swift in Sources */,
 				99A4906827C75B8B00FF16A7 /* CastCollectionViewCell.swift in Sources */,
 				992C258127C20FED00A43AF6 /* NowShowingCollectionViewCell.swift in Sources */,
+				99FCA2F9282798480018AD1B /* CinemaTimeSlotRepository.swift in Sources */,
 				992CC6A927BA236500D991A9 /* SceneDelegate.swift in Sources */,
 				99ACF15427C0CA2400DC3AFC /* DummyData.swift in Sources */,
 				99F9A9DB281D3B890092E6A3 /* CinemaModel.swift in Sources */,
