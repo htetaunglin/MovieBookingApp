@@ -10,6 +10,7 @@ import Foundation
 protocol UserRepository {
     func saveUser(user: User)
     func getUser(id: Int, completion: @escaping (User?) -> Void)
+    func savePaymentCards(userId: Int, paymentCards: [PaymentCard])
 }
 
 
@@ -32,5 +33,18 @@ class UserRepositoryImpl: BaseRepository, UserRepository {
     func getUser(id: Int, completion: @escaping (User?) -> Void) {
         let user = realmDB.object(ofType: UserObject.self, forPrimaryKey: id)
         completion(user?.toUser())
+    }
+    
+    func savePaymentCards(userId: Int, paymentCards: [PaymentCard]) {
+        let user = realmDB.object(ofType: UserObject.self, forPrimaryKey: userId)
+        do {
+            try realmDB.write {
+                let objects = paymentCards.map{ $0.toPaymentCardObject() }
+                realmDB.add(objects, update: .modified)
+                user?.paymentCard.append(objectsIn: paymentCards.map{ $0.toPaymentCardObject() })
+            }
+        } catch {
+            debugPrint(error.localizedDescription)
+        }
     }
 }

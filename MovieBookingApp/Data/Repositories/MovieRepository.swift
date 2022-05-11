@@ -26,10 +26,11 @@ class MovieRepositoryImpl : BaseRepository, MovieRepository {
     func saveShowingMovie(movies: [Movie]) {
         do {
             try realmDB.write{
-                realmDB.add(movies.map{ $0.toMovieObject() }, update: .modified)
+                let objects = movies.map{ $0.toMovieObject() }
+                realmDB.add(objects, update: .modified)
                 let blttObj = BelongToTypeObject()
                 blttObj.name = "Now Showing"
-                blttObj.movies.append(objectsIn: movies.map{ $0.toMovieObject() })
+                blttObj.movies.append(objectsIn: objects)
                 realmDB.add(blttObj, update: .modified)
             }
         } catch {
@@ -40,10 +41,11 @@ class MovieRepositoryImpl : BaseRepository, MovieRepository {
     func saveComingMovie(movies: [Movie]) {
         do {
             try realmDB.write{
-                realmDB.add(movies.map{ $0.toMovieObject() }, update: .modified)
+                let objects = movies.map{ $0.toMovieObject() }
+                realmDB.add(objects, update: .modified)
                 let blttObj = BelongToTypeObject()
                 blttObj.name = "Coming Soon"
-                blttObj.movies.append(objectsIn: movies.map{ $0.toMovieObject() })
+                blttObj.movies.append(objectsIn: objects)
                 realmDB.add(blttObj, update: .modified)
             }
         } catch {

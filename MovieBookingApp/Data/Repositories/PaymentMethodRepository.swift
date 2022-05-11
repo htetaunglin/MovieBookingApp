@@ -21,7 +21,7 @@ class PaymentMethodRepositoryImpl: BaseRepository, PaymentMethodRepository {
     func savePaymentMethods(methods: [PaymentMethod]) {
         do {
             try realmDB.write {
-                realmDB.add(methods.map{ $0.toPaymentMethodObject() })
+                realmDB.add(methods.map{ $0.toPaymentMethodObject() }, update: .modified)
             }
         } catch {
             debugPrint(error.localizedDescription)
