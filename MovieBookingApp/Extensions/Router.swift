@@ -74,7 +74,9 @@ extension UIViewController{
     }
     
     func navigateToTicketViewController(ticket: MovieTicket){
+        guard let homeVC = UIStoryboard.mainStoryBoard().instantiateViewController(identifier: HomeViewController.identifier) as? HomeViewController else {return}
         guard let vc = UIStoryboard.mainStoryBoard().instantiateViewController(identifier: TicketViewController.identifier) as? TicketViewController else {return}
-        self.navigationController?.pushViewController(vc, animated: true)
+        vc.movieTicket = ticket
+        self.navigationController?.setViewControllers([homeVC, vc], animated: true)
     }
 }

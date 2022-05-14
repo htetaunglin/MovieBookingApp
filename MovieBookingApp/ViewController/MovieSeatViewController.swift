@@ -20,6 +20,7 @@ class MovieSeatViewController: UIViewController{
     @IBOutlet weak var lblTime: UILabel!
     
     let seatModel: SeatModel = SeatModelImpl.shared
+    let bookingModel: BookingInfoModel = BookingInfoModelImpl.shared
     
     var seats: [Seat] = [] {
         didSet {
@@ -73,15 +74,18 @@ class MovieSeatViewController: UIViewController{
     }
     
     func dataBind(){
-        lblMovieName.text = MovieTicketVo.movie?.originalTitle ?? ""
-        let movieTime =  MovieTicketVo.movieTime
-        let time = movieTime?.date.toFormat(format: "EEEE, dd MMM")
-        lblCinema.text = movieTime?.cinema.name ?? ""
-        lblTime.text = "\(time ?? ""), \(movieTime?.timeSlot.startTime ?? "")"
+        if let obj = bookingModel.getbookingInfo() {
+            lblMovieName.text = obj.movie?.originalTitle ?? ""
+            let movieTime =  obj.cinemaDayTimeSlot?.startTime ?? ""
+            let time = obj.date?.toFormat(format: "EEEE, dd MMM") ?? ""
+            lblCinema.text = obj.cinema?.name ?? ""
+            lblTime.text = "\(time), \(movieTime)"
+        }
     }
     
     func fetchSeats(){
-        seatModel.getSeat(timeSlotId: MovieTicketVo.movieTime?.getCinemaDayTimeSlotId() ?? 0, date: MovieTicketVo.movieTime?.getBookingDate() ?? ""){[weak self] result in
+        
+        seatModel.getSeat(timeSlotId: bookingModel.getbookingInfo()?.cinemaDayTimeSlot?.cinemaDayTimeslotID ?? 0, date: bookingModel.getbookingInfo()?.date?.toFormat(format: "yyyy-MM-dd") ?? ""){[weak self] result in
             switch result {
             case .success(let seats):
                 self?.seats = SeatUtils.to1DArraySeats(seats)
@@ -97,13 +101,13 @@ class MovieSeatViewController: UIViewController{
     
     @IBAction func onClickBuy(_ sender: Any) {
         if selectedSeats.count != 0 {
-            MovieTicketVo.movieSeat = MovieSeatVo(seat: selectedSeats)
+            bookingModel.setSeats(seats: selectedSeats)
             navigateToSnackViewController()
         }
     }
     
     deinit {
-        MovieTicketVo.movieSeat = nil
+        bookingModel.clearSeats()
     }
 }
 

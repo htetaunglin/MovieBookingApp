@@ -1103,51 +1103,45 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="kuJ-ch-QyW">
                                                                 <rect key="frame" x="32" y="0.0" width="350" height="882.5"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="In_From_the_Cold_Wide" translatesAutoresizingMaskIntoConstraints="NO" id="yO2-gy-0f7">
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="family_movie" translatesAutoresizingMaskIntoConstraints="NO" id="yO2-gy-0f7">
                                                                         <rect key="frame" x="0.0" y="0.0" width="350" height="175"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" secondItem="yO2-gy-0f7" secondAttribute="height" multiplier="2:1" id="3Wi-KI-HT8"/>
                                                                         </constraints>
                                                                     </imageView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="JNV-Rv-ruh">
-                                                                        <rect key="frame" x="0.0" y="179" width="350" height="288.5"/>
+                                                                        <rect key="frame" x="0.0" y="179" width="350" height="333"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In From The Cold" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqU-H6-O3b">
-                                                                                <rect key="frame" x="20" y="8" width="310" height="245"/>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqU-H6-O3b">
+                                                                                <rect key="frame" x="20" y="8" width="310" height="317"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
                                                                                 <nil key="textColor"/>
-                                                                                <nil key="highlightedColor"/>
-                                                                            </label>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="105m - IMAX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T6a-mX-49A">
-                                                                                <rect key="frame" x="20" y="261" width="310" height="19.5"/>
-                                                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
-                                                                                <color key="textColor" name="movie_seat_taken_color"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                         </subviews>
                                                                         <edgeInsets key="layoutMargins" top="8" left="20" bottom="8" right="20"/>
                                                                     </stackView>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2p3-Cv-m8Y">
-                                                                        <rect key="frame" x="0.0" y="471.5" width="350" height="0.5"/>
+                                                                        <rect key="frame" x="0.0" y="516" width="350" height="0.5"/>
                                                                         <color key="backgroundColor" name="movie_seat_taken_color"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="0.5" id="94m-Oi-MLh"/>
                                                                         </constraints>
                                                                     </view>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="HrS-Ot-1hk">
-                                                                        <rect key="frame" x="0.0" y="476" width="350" height="303.5"/>
+                                                                        <rect key="frame" x="0.0" y="520.5" width="350" height="259"/>
                                                                         <subviews>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HJB-C9-QG9">
                                                                                 <rect key="frame" x="20" y="8" width="310" height="20.5"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Booking no" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tlb-cE-we4">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="188.5" height="20.5"/>
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="302" height="20.5"/>
                                                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                                                                         <color key="textColor" name="movie_seat_taken_color"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
-                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CG1525645345" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xae-f5-Yec">
-                                                                                        <rect key="frame" x="188.5" y="0.0" width="121.5" height="20.5"/>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xae-f5-Yec">
+                                                                                        <rect key="frame" x="302" y="0.0" width="8" height="20.5"/>
                                                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                                                         <nil key="textColor"/>
                                                                                         <nil key="highlightedColor"/>
@@ -1158,13 +1152,13 @@
                                                                                 <rect key="frame" x="20" y="52.5" width="310" height="20.5"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Show time - Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sfr-Q5-gfg">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="183" height="20.5"/>
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="302" height="20.5"/>
                                                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                                                                         <color key="textColor" name="movie_seat_taken_color"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
-                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7:00PM - 10 May" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QLT-fD-fZe">
-                                                                                        <rect key="frame" x="183" y="0.0" width="127" height="20.5"/>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QLT-fD-fZe">
+                                                                                        <rect key="frame" x="302" y="0.0" width="8" height="20.5"/>
                                                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                                                         <nil key="textColor"/>
                                                                                         <nil key="highlightedColor"/>
@@ -1175,30 +1169,13 @@
                                                                                 <rect key="frame" x="20" y="97" width="310" height="20.5"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Theater" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdi-Ho-Zam">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="94.5" height="20.5"/>
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="302" height="20.5"/>
                                                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                                                                         <color key="textColor" name="movie_seat_taken_color"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
-                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Galaxy Cinema - Golden City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KFY-3H-cq6">
-                                                                                        <rect key="frame" x="94.5" y="0.0" width="215.5" height="20.5"/>
-                                                                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                                                                        <nil key="textColor"/>
-                                                                                        <nil key="highlightedColor"/>
-                                                                                    </label>
-                                                                                </subviews>
-                                                                            </stackView>
-                                                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nw7-6Z-8iV">
-                                                                                <rect key="frame" x="20" y="141.5" width="310" height="20.5"/>
-                                                                                <subviews>
-                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wdQ-4i-jnq">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="20.5"/>
-                                                                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
-                                                                                        <color key="textColor" name="movie_seat_taken_color"/>
-                                                                                        <nil key="highlightedColor"/>
-                                                                                    </label>
-                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PDE-jE-Vax">
-                                                                                        <rect key="frame" x="300" y="0.0" width="10" height="20.5"/>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KFY-3H-cq6">
+                                                                                        <rect key="frame" x="302" y="0.0" width="8" height="20.5"/>
                                                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                                                         <nil key="textColor"/>
                                                                                         <nil key="highlightedColor"/>
@@ -1206,16 +1183,16 @@
                                                                                 </subviews>
                                                                             </stackView>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HAV-SX-I0t">
-                                                                                <rect key="frame" x="20" y="186" width="310" height="20.5"/>
+                                                                                <rect key="frame" x="20" y="141.5" width="310" height="20.5"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Row" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a38-Nn-Wkq">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="298" height="20.5"/>
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="302" height="20.5"/>
                                                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                                                                         <color key="textColor" name="movie_seat_taken_color"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
-                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U4w-sM-nbs">
-                                                                                        <rect key="frame" x="298" y="0.0" width="12" height="20.5"/>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U4w-sM-nbs">
+                                                                                        <rect key="frame" x="302" y="0.0" width="8" height="20.5"/>
                                                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                                                         <nil key="textColor"/>
                                                                                         <nil key="highlightedColor"/>
@@ -1223,16 +1200,16 @@
                                                                                 </subviews>
                                                                             </stackView>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A00-xy-OwU">
-                                                                                <rect key="frame" x="20" y="230.5" width="310" height="20.5"/>
+                                                                                <rect key="frame" x="20" y="186" width="310" height="20.5"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Seats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lsr-EC-dPa">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="286.5" height="20.5"/>
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="302" height="20.5"/>
                                                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                                                                         <color key="textColor" name="movie_seat_taken_color"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
-                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5,6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jug-Ho-mDf">
-                                                                                        <rect key="frame" x="286.5" y="0.0" width="23.5" height="20.5"/>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jug-Ho-mDf">
+                                                                                        <rect key="frame" x="302" y="0.0" width="8" height="20.5"/>
                                                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                                                         <nil key="textColor"/>
                                                                                         <nil key="highlightedColor"/>
@@ -1240,16 +1217,16 @@
                                                                                 </subviews>
                                                                             </stackView>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Qw-mT-Pld">
-                                                                                <rect key="frame" x="20" y="275" width="310" height="20.5"/>
+                                                                                <rect key="frame" x="20" y="230.5" width="310" height="20.5"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Siu-nP-Vci">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="258.5" height="20.5"/>
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="302" height="20.5"/>
                                                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                                                                         <color key="textColor" name="movie_seat_taken_color"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
-                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$4000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MWi-3e-OOS">
-                                                                                        <rect key="frame" x="258.5" y="0.0" width="51.5" height="20.5"/>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MWi-3e-OOS">
+                                                                                        <rect key="frame" x="302" y="0.0" width="8" height="20.5"/>
                                                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                                                         <nil key="textColor"/>
                                                                                         <nil key="highlightedColor"/>
@@ -1273,7 +1250,7 @@
                                                                             <constraint firstAttribute="height" constant="12" id="bvB-8Z-kJL"/>
                                                                         </constraints>
                                                                     </view>
-                                                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="barcode" translatesAutoresizingMaskIntoConstraints="NO" id="dg3-Xw-c8C">
+                                                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dg3-Xw-c8C">
                                                                         <rect key="frame" x="0.0" y="804" width="350" height="58.5"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" secondItem="dg3-Xw-c8C" secondAttribute="height" multiplier="6:1" id="A8F-KJ-vGr"/>
@@ -2301,11 +2278,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="In_From_the_Cold_Wide" width="426.66665649414062" height="240"/>
-        <image name="barcode" width="882.33331298828125" height="315.33334350585938"/>
         <image name="character.book.closed.fill" catalog="system" width="115" height="128"/>
         <image name="doc.plaintext.fill" catalog="system" width="115" height="128"/>
         <image name="facebook" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="family_movie" width="2326" height="1154"/>
         <image name="get_started" width="1455.6666259765625" height="1455.6666259765625"/>
         <image name="google" width="200" height="200"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>

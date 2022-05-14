@@ -9,6 +9,7 @@ import Foundation
 
 protocol CinemaModel {
     func getCinemas(completion: @escaping (MBAResult<[Cinema]>) -> Void)
+    func getCinemaById(cinemaId: Int, completion: @escaping (MBAResult<Cinema>) -> Void)
     func getTimeSlots(movieId: Int, date: String, completion: @escaping (MBAResult<[CinemaTimeSlot]>) -> Void)
 }
 
@@ -55,5 +56,15 @@ class CinemaModelImpl: BaseModel, CinemaModel {
             completion(.failure("Token not found"))
         }
        
+    }
+    
+    func getCinemaById(cinemaId: Int, completion: @escaping (MBAResult<Cinema>) -> Void) {
+        cinemaRepo.getCinemaById(cinemaId: cinemaId){ cinema in
+            if let c = cinema {
+                completion(.success(c))
+            } else {
+                completion(.failure("Cinema not found"))
+            }
+        }
     }
 }

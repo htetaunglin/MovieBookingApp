@@ -211,13 +211,13 @@ class NetworkAgent: NetworkAgentProtocol {
     
     func checkout(token: String, cinemaDayTimeSlotId: Int, row: String, seatNumber: String, bookingDate: String, totalPrice: Double, movieId: Int, cardId: Int, cinemaId: Int, snacks: [SnackRequest], completion: @escaping (MBAResult<BaseResponse<MovieTicket>>) -> Void) {
         let headers = HTTPHeaders([
-            HTTPHeader(name: "Authorization", value: "Bearer \(token)")
+            HTTPHeader(name: "Authorization", value: "Bearer \(token)"),
         ])
-        let param = TicketRequest(cinemaDayTimeslotID: cinemaDayTimeSlotId, row: row, seatNumber: seatNumber, bookingDate: bookingDate, totalPrice: totalPrice, movieID: movieId, cardID: cardId, cinemaID: cinemaId, snacks: snacks)
+        let ticket = TicketRequest(cinemaDayTimeslotID: cinemaDayTimeSlotId, row: row, seatNumber: seatNumber, bookingDate: bookingDate, totalPrice: totalPrice, movieID: movieId, cardID: cardId, cinemaID: cinemaId, snacks: snacks)
         AF.request(NetworkEndPoint.checkout,
                    method: .post,
-                   parameters: param,
-                   encoder: URLEncodedFormParameterEncoder.default,
+                   parameters: ticket,
+                   encoder: JSONParameterEncoder.default,
                    headers: headers)
         .decodable(completion: completion)
     }

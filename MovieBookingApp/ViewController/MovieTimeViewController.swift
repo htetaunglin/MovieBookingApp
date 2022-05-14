@@ -23,6 +23,7 @@ class MovieTimeViewController: UIViewController{
     @IBOutlet weak var collectionViewTimeSlot: UICollectionView!
     
     private let cinemaModel: CinemaModel = CinemaModelImpl.shared
+    private let bookingInfoModel: BookingInfoModel = BookingInfoModelImpl.shared
     
     private var dates: [Date] = [] {
         didSet {
@@ -48,7 +49,7 @@ class MovieTimeViewController: UIViewController{
         didSet {
             // fetch network
             if let date = chooseDate {
-                fetchTimeSlots(movieId: MovieTicketVo.movie?.id ?? 0, date: date.toFormat(format: "yyyy-MM-dd"))
+                fetchTimeSlots(movieId:bookingInfoModel.getbookingInfo()?.movieId ?? 0, date: date.toFormat(format: "yyyy-MM-dd"))
             }
             collectionViewDays.reloadData()
         }
@@ -164,13 +165,12 @@ class MovieTimeViewController: UIViewController{
     
     @IBAction func onClickNext(_ sender: Any) {
         if chooseDate != nil && chooseCinema != nil && chooseTimeSlot != nil {
-            MovieTicketVo.movieTime = MovieTimeVo(date: chooseDate!, cinema: chooseCinema!, cinemaTimeSlot: chooseCinemaTimeSlot!, timeSlot: chooseTimeSlot!)
+            bookingInfoModel.setTimeSlot(cinema: chooseCinema!, cinemaDayTimeSlot: chooseTimeSlot!, date: chooseDate!)
             navigateToMovieSeatViewController()
         }
     }
     
     deinit {
-        MovieTicketVo.movieTime = nil
     }
 }
 

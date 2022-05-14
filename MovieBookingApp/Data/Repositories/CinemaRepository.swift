@@ -10,6 +10,7 @@ import Foundation
 protocol CinemaRepository {
     func saveCinemas(cinemas: [Cinema])
     func getCinemas(completion: @escaping ([Cinema]) -> Void)
+    func getCinemaById(cinemaId: Int, completion: @escaping (Cinema?) -> Void)
 }
 
 class CinemaRepositoryImpl: BaseRepository, CinemaRepository {
@@ -32,5 +33,10 @@ class CinemaRepositoryImpl: BaseRepository, CinemaRepository {
     func getCinemas(completion: @escaping ([Cinema]) -> Void) {
         let objects = realmDB.objects(CinemaObject.self)
         completion(objects.map{ $0.toCinema() })
+    }
+    
+    func getCinemaById(cinemaId: Int, completion: @escaping (Cinema?) -> Void) {
+        let object = realmDB.object(ofType: CinemaObject.self, forPrimaryKey: cinemaId)
+        completion(object?.toCinema())
     }
 }

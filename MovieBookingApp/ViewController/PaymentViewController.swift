@@ -16,6 +16,7 @@ class PaymentViewController: UIViewController{
     
     let userModel: UserModel = UserModelImpl.shared
     let ticketModel: TicketModel = TicketModelImpl.shared
+    let bookingModel: BookingInfoModel = BookingInfoModelImpl.shared
     
     var paymentCards: [PaymentCard] = [] {
         didSet {
@@ -58,40 +59,58 @@ class PaymentViewController: UIViewController{
     }
     
     @IBAction func onClickConfirm(_ sender: Any) {
-        let cinemaDayTimeSlotId = MovieTicketVo.movieTime?.getCinemaDayTimeSlotId() ?? 0
-        let row = MovieTicketVo.movieSeat?.getRows().joined(separator: ",") ?? ""
-        let seatNumbers = MovieTicketVo.movieSeat?.getSeatNumbers().joined(separator: ",") ?? ""
-        let bookingDate = MovieTicketVo.movieTime?.getBookingDate() ?? ""
-        let totalPrice = MovieTicketVo.totalCharges()
-        let movieId = MovieTicketVo.movie?.id ?? 0
-        let cardId = chooseCard?.id ?? 0
-        let cinemaId = MovieTicketVo.movieTime?.getCinemaId() ?? 0
-        let snacks = MovieTicketVo.snackVo?.getSnackRequest() ?? []
-        // Call Checkout API
+        if let card = chooseCard {
+            bookingModel.setPaymentCard(card: card)
+        }
         
-//        debugPrint("cinemaDayTimeSlotId = \(cinemaDayTimeSlotId)")
-//        debugPrint("row = \(row)")
-//        debugPrint("seatNumbers = \(seatNumbers)")
-//        debugPrint("bookingDate = \(bookingDate)")
-//        debugPrint("totalPrice = \(totalPrice)")
-//        debugPrint("movieId = \(movieId)")
-//        debugPrint("paymentCardId = \(cardId)")
-//        debugPrint("cinemaId = \(cinemaId)")
-//        debugPrint("snacks = \(snacks)")
-        //        navigateToTicketViewController()
-        showLoadingAlert()
-        ticketModel.checkout(cinemaDayTimeSlotId: cinemaDayTimeSlotId, row: row, seatNumber: seatNumbers, bookingDate: bookingDate, totalPrice: totalPrice, movieId: movieId, cardId: cardId, cinemaId: cinemaId, snacks: snacks){[weak self] result in
-            switch result {
-            case .success(let ticket):
-                self?.presentedViewController?.dismiss(animated: false) {
-                    self?.navigateToTicketViewController(ticket: ticket)
-                }
-            case .failure(let error):
-                self?.presentedViewController?.dismiss(animated: false) {
-                    self?.showMessageAlert(error)
+        if let booking = bookingModel.getbookingInfo() {
+            let cinemaDayTimeSlotId : Int = booking.cinemaDayTimeSlot?.cinemaDayTimeslotID ?? 0
+            let row: String = Array(Set(booking.seats.map{ $0.symbol })).joined(separator: ",")
+            let seatNumbers: String = Array(Set(booking.seats.map{ $0.seatName })).joined(separator: ",")
+            let bookingDate: String = booking.date?.toFormat(format: "yyyy-MM-dd") ?? ""
+            let totalPrice: Double = 0
+            let movieId: Int = booking.movieId
+            let cardId: Int = chooseCard?.id ?? 0
+            let cinemaId: Int = booking.cinema?.id ?? 0
+            let snacks: [SnackRequest] = booking.snacks.map{ $0.toSnackRequest() }
+        
+            showLoadingAlert()
+            ticketModel.checkout(cinemaDayTimeSlotId: cinemaDayTimeSlotId, row: row, seatNumber: seatNumbers, bookingDate: bookingDate, totalPrice: totalPrice, movieId: movieId, cardId: cardId, cinemaId: cinemaId, snacks: snacks){[weak self] result in
+                switch result {
+                case .success(let ticket):
+                    self?.bookingModel.clearBookingInfo(movieId: movieId)
+                    self?.presentedViewController?.dismiss(animated: false) {
+                        self?.navigateToTicketViewController(ticket: ticket)
+                    }
+                case .failure(let error):
+                    self?.presentedViewController?.dismiss(animated: false) {
+                        self?.showMessageAlert(error)
+                    }
                 }
             }
         }
+//        let cinemaDayTimeSlotId = bookingModel.getbookingInfo()
+//        let row = MovieTicketVo.movieSeat?.getRows().joined(separator: ",") ?? ""
+//        let seatNumbers = MovieTicketVo.movieSeat?.getSeatNumbers().joined(separator: ",") ?? ""
+//        let bookingDate = MovieTicketVo.movieTime?.getBookingDate() ?? ""
+//        let totalPrice = MovieTicketVo.totalCharges()
+//        let movieId = MovieTicketVo.movie?.id ?? 0
+//        let cardId = chooseCard?.id ?? 0
+//        let cinemaId = MovieTicketVo.movieTime?.getCinemaId() ?? 0
+//        let snacks = MovieTicketVo.snackVo?.getSnackRequest() ?? []
+//        // Call Checkout API
+//
+////        debugPrint("cinemaDayTimeSlotId = \(cinemaDayTimeSlotId)")
+////        debugPrint("row = \(row)")
+////        debugPrint("seatNumbers = \(seatNumbers)")
+////        debugPrint("bookingDate = \(bookingDate)")
+////        debugPrint("totalPrice = \(totalPrice)")
+////        debugPrint("movieId = \(movieId)")
+////        debugPrint("paymentCardId = \(cardId)")
+////        debugPrint("cinemaId = \(cinemaId)")
+////        debugPrint("snacks = \(snacks)")
+//        //        navigateToTicketViewController()
+        
     }
     
     
@@ -107,7 +126,7 @@ class PaymentViewController: UIViewController{
     }
     
     func dataBind(){
-        lblAmount.text = "$ \(MovieTicketVo.totalCharges())"
+        lblAmount.text = "$ \(bookingModel.getbookingInfo()?.totalCharges() ?? 0)"
         paymentCards = userModel.user?.paymentCard ?? []
         cardCarousel.isHidden = paymentCards.isEmpty
     }

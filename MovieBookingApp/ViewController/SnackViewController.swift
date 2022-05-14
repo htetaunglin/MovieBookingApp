@@ -22,29 +22,30 @@ class SnackViewController: UIViewController{
     let snackModel: SnackModel = SnackModelImpl.shared
     let paymentMethodModel: PaymentMethodModel = PaymentMethodModelImpl.shared
     let userModel: UserModel = UserModelImpl.shared
+    let bookingModel: BookingInfoModel = BookingInfoModelImpl.shared
     
-    var snacks: [Snack] = [] {
+    private var snacks: [Snack] = [] {
         didSet {
             heightOfComboSetTableView.constant = CGFloat(snacks.count * 80)
             comboSetTableView.reloadData()
         }
     }
     
-    var paymentMethods: [PaymentMethod] = [] {
+    private var paymentMethods: [PaymentMethod] = [] {
         didSet {
             heightOfPaymentTableView.constant = CGFloat(paymentMethods.count * 60)
             paymentMethodTableView.reloadData()
         }
     }
     
-    var totalAmount: Double = 0 {
+    private var totalAmount: Double = 0 {
         didSet {
             lblSubTotal.text = "Sub total: \(totalAmount)$"
-            btnPay.setTitle("Pay $\((MovieTicketVo.movieSeat?.getTotalAmount() ?? 0) + totalAmount)", for: .normal)
+            btnPay.setTitle("Pay $\((bookingModel.getbookingInfo()?.totalCharges() ?? 0) + totalAmount)", for: .normal)
         }
     }
     
-    var selectedCombo: [Snack: Int] = [Snack: Int]() {
+    private var selectedCombo: [Snack: Int] = [Snack: Int]() {
         didSet {
             totalAmount = selectedCombo.reduce(0.0){ previous, combo in
                 return previous + ((combo.key.price ?? 0) * Double(combo.value))
@@ -54,6 +55,7 @@ class SnackViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        bookingModel.clearSnacks()
         registerComboSetTableView()
         decorateTextField()
         registerPaymentMethodTableView()
@@ -61,7 +63,7 @@ class SnackViewController: UIViewController{
         // API
         fetchSnacks()
         fetchPaymentMethod()
-        btnPay.setTitle("Pay $\((MovieTicketVo.movieSeat?.getTotalAmount() ?? 0))", for: .normal)
+        btnPay.setTitle("Pay $\(bookingModel.getbookingInfo()?.totalCharges() ?? 0)", for: .normal)
     }
     
     private func registerComboSetTableView(){
@@ -107,12 +109,13 @@ class SnackViewController: UIViewController{
     }
     
     @IBAction func onClickPay(_ sender: Any) {
-        MovieTicketVo.snackVo = SnackVo(snacks: selectedCombo)
+        bookingModel.setSnacks(snacks: selectedCombo)
         navigateToPaymentViewController()
     }
     
     deinit {
-        MovieTicketVo.snackVo = nil
+        debugPrint("SnackView Controll deinit")
+        bookingModel.clearSnacks()
     }
 }
 

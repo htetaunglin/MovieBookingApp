@@ -16,6 +16,7 @@ class DrawerViewController: UIViewController {
     
     let userModel: UserModel = UserModelImpl.shared
     let authModel: AuthModel = AuthModelImpl.shared
+    let bookingModel: BookingInfoModel = BookingInfoModelImpl.shared
     
     var user: User? {
         didSet {
@@ -36,10 +37,10 @@ class DrawerViewController: UIViewController {
         self.authModel.logout{[weak self] result in
             switch result {
             case .success(_):
+                self?.bookingModel.clearAllBookingInfo()
                 // Close dialog
                 self?.dismiss(animated: true) {
                     guard let vc = UIStoryboard.mainStoryBoard().instantiateViewController(identifier: GetStartedViewController.identifier) as? GetStartedViewController else {return}
-//                    self?.view.window?.rootViewController = UINavigationController(rootViewController: vc)
                     if let root = self?.view.window?.rootViewController as? UINavigationController {
                         // Close drawer
                         self?.dismiss(animated: false){

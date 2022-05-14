@@ -6,12 +6,12 @@
 import Foundation
 
 // MARK: - TicketRequest
-struct TicketRequest: Codable {
+struct TicketRequest: Encodable {
     let cinemaDayTimeslotID: Int?
     let row, seatNumber, bookingDate: String?
     let totalPrice: Double?
     let movieID, cardID, cinemaID: Int?
-    let snacks: [SnackRequest]?
+    let snacks: Array<SnackRequest>
 
     enum CodingKeys: String, CodingKey {
         case cinemaDayTimeslotID = "cinema_day_timeslot_id"
@@ -27,6 +27,6 @@ struct TicketRequest: Codable {
 }
 
 // MARK: - Snack
-struct SnackRequest: Codable {
+struct SnackRequest: Encodable {
     let id, quantity: Int?
 }

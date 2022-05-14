@@ -22,6 +22,7 @@ class MovieDetailViewController: UIViewController{
     @IBOutlet weak var lblSummary: UILabel!
     
     let movieModel: MovieModel = MovieModelImpl.shared
+    let bookingInfoModel: BookingInfoModel = BookingInfoModelImpl.shared
     
     var movieId: Int?
     
@@ -100,13 +101,13 @@ class MovieDetailViewController: UIViewController{
     
     @IBAction func onClickGetYourTicket(_ sender: Any) {
         if let m = movie {
-            MovieTicketVo.movie = m
+            bookingInfoModel.createBookingInfo(m)
             navigateToMovieTimeViewController()
         }
     }
     
     deinit {
-        MovieTicketVo.movie = nil
+
     }
 }
 
