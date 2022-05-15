@@ -107,8 +107,19 @@ class NetworkAgent: NetworkAgentProtocol {
         .decodable(completion: completion)
     }
     
-    func signUpWithGoogle(googleToken: String, completion: @escaping (MBAResult<BaseResponse<User>>) -> Void) {
-        
+    func signUpWithGoogle(name: String, email: String, phone: String, password: String, googleToken: String, completion: @escaping (MBAResult<BaseResponse<User>>) -> Void) {
+        let param = [
+            "name": name,
+            "email": email,
+            "phone": phone,
+            "password": password,
+            "google-access-token": googleToken
+        ]
+        AF.request(NetworkEndPoint.signUp,
+                   method: .post,
+                   parameters: param,
+                   encoder: URLEncodedFormParameterEncoder.default)
+        .decodable(completion: completion)
     }
     
     func signUpWithFacebook(facebookToken: String, completion: @escaping (MBAResult<BaseResponse<User>>) -> Void) {
@@ -128,7 +139,14 @@ class NetworkAgent: NetworkAgentProtocol {
     }
     
     func loginWithGoogle(googleToken: String, completion: @escaping (MBAResult<BaseResponse<User>>) -> Void) {
-        
+        let param = [
+            "access-token": googleToken
+        ]
+        AF.request(NetworkEndPoint.signInGoogle,
+                   method: .post,
+                   parameters: param,
+                   encoder: URLEncodedFormParameterEncoder.default)
+        .decodable(completion: completion)
     }
     
     func loginWithFacebook(facebookToken: String, completion: @escaping (MBAResult<BaseResponse<User>>) -> Void) {

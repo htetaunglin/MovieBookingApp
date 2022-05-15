@@ -18,9 +18,9 @@ class SeatModelImpl: BaseModel, SeatModel {
     private let seatRepo: SeatRepository = SeatRepositoryImpl.shared
     
     func getSeat(timeSlotId: Int, date: String, completion: @escaping (MBAResult<[[Seat]]>) -> Void) {
-//        seatRepo.getSeats(timeSlotId: timeSlotId, date: date) { seats in
-//            completion(.success(SeatUtils.to2DArraySeats(seats)))
-//        }
+        seatRepo.getSeats(timeSlotId: timeSlotId, date: date) { seats in
+            completion(.success(SeatUtils.to2DArraySeats(seats)))
+        }
         if let token = UserModelImpl.userToken {
             networkAgent.getSeats(token: token, timeSlotId: timeSlotId, date: date){ [weak self] result in
                 switch result {

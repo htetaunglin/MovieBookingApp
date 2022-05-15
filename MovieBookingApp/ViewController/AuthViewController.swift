@@ -58,6 +58,7 @@ class AuthViewController: UIViewController{
     private func decorateFacebookButton(){
         buttonFacebookLogin.setButtonBorder(color: UIColor.init(named: "movie_seat_available_color") ?? UIColor.gray)
         buttonGoogleLogin.setButtonBorder(color: UIColor.init(named: "movie_seat_available_color") ?? UIColor.gray)
+        buttonGoogleLogin.onClick(target: self, action: #selector(onClickGoogleLogin))
     }
     
     private func setUpControlTab(){
@@ -78,6 +79,48 @@ class AuthViewController: UIViewController{
         if currentTab == .signUp {
             currentTab = .login
             changeTab(isLogin: true)
+        }
+    }
+    
+    let googleAuth = GoogleAuth()
+    @objc func onClickGoogleLogin(){
+        debugPrint("Click Google Login")
+//        self.mView as? UIViewController
+        googleAuth.start(view: self as UIViewController, success: {[weak self] (data) in
+            switch self?.currentTab {
+            case .login:
+                self?.loginWithGoogle(id: data.id)
+            case .signUp:
+                self?.signUpWithGoogle(name: data.giveName, email: data.email, phone: "", password: "", googleId: data.id)
+            case .none:
+                debugPrint("Error")
+            }
+        }) { (err) in
+            self.showMessageAlert(err)
+            debugPrint(err)
+            
+        }
+    }
+    
+    private func signUpWithGoogle(name: String, email: String, phone: String, password: String, googleId: String){
+        authModel.signUpWithGoogle(name: name, email: email, phone: phone, password: password, googleToken: googleId) { [weak self] result in
+            switch result {
+            case .success(_):
+                self?.navigateToHomeController(isReplace: true)
+            case .failure(let error):
+                self?.showMessageAlert(error)
+            }
+        }
+    }
+    
+    private func loginWithGoogle(id: String){
+        authModel.loginWithGoogle(googleToken: id) {[weak self] result in
+            switch result {
+            case .success(_):
+                self?.navigateToHomeController(isReplace: true)
+            case .failure(let error):
+                self?.showMessageAlert(error)
+            }
         }
     }
     

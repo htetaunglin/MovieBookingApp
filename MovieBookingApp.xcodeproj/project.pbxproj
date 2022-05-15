@@ -85,6 +85,7 @@
 		99E9CEBD2813E3A800794996 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E9CEBC2813E3A800794996 /* UserRepository.swift */; };
 		99E9CEC02813E41100794996 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E9CEBF2813E41100794996 /* BaseModel.swift */; };
 		99E9CEC22813E47100794996 /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E9CEC12813E47100794996 /* AuthModel.swift */; };
+		99EA7035282F979400A57414 /* GoogleAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EA7034282F979400A57414 /* GoogleAuth.swift */; };
 		99F0285227C25008009F6256 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F0285127C25008009F6256 /* AuthViewController.swift */; };
 		99F9A9DB281D3B890092E6A3 /* CinemaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F9A9DA281D3B890092E6A3 /* CinemaModel.swift */; };
 		99FCA2DB2826D1CD0018AD1B /* MovieObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FCA2DA2826D1CD0018AD1B /* MovieObject.swift */; };
@@ -186,6 +187,7 @@
 		99E9CEBC2813E3A800794996 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		99E9CEBF2813E41100794996 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		99E9CEC12813E47100794996 /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
+		99EA7034282F979400A57414 /* GoogleAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuth.swift; sourceTree = "<group>"; };
 		99F0285127C25008009F6256 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		99F9A9DA281D3B890092E6A3 /* CinemaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaModel.swift; sourceTree = "<group>"; };
 		99FCA2DA2826D1CD0018AD1B /* MovieObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieObject.swift; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 		992CC6A527BA236500D991A9 /* MovieBookingApp */ = {
 			isa = PBXGroup;
 			children = (
+				99EA7033282F978D00A57414 /* Auth */,
 				99E9CEB02813C62B00794996 /* Contstants */,
 				99E9CEA92812F81C00794996 /* Network */,
 				99780BB627C3FEAD00DA91EB /* Components */,
@@ -523,6 +526,14 @@
 			path = Repositories;
 			sourceTree = "<group>";
 		};
+		99EA7033282F978D00A57414 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				99EA7034282F979400A57414 /* GoogleAuth.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 		99FCA2D72826D19B0018AD1B /* Realm */ = {
 			isa = PBXGroup;
 			children = (
@@ -680,6 +691,7 @@
 				997662B627C0EBF800757397 /* GetStartedViewController.swift in Sources */,
 				99FCA2E12826D61C0018AD1B /* UserObject.swift in Sources */,
 				9929D84627C8A5F0002B72DE /* FoodTableViewCell.swift in Sources */,
+				99EA7035282F979400A57414 /* GoogleAuth.swift in Sources */,
 				9982389227C9482F00CDFBF5 /* TicketViewController.swift in Sources */,
 				9996523927C9FC62008190BC /* Router.swift in Sources */,
 				99FCA2DD2826D22A0018AD1B /* CastObject.swift in Sources */,

@@ -10,7 +10,7 @@ import Foundation
 protocol AuthModel {
     static var isLoggedIn: Bool { get }
     func signUpWithEmail(name: String, email: String, phone: String, password: String, completion: @escaping (MBAResult<User>) -> Void)
-    func signUpWithGoogle(googleToken: String, completion: @escaping (MBAResult<User>) -> Void)
+    func signUpWithGoogle(name: String, email: String, phone: String, password: String, googleToken: String, completion: @escaping (MBAResult<User>) -> Void)
     func signUpWithFacebook(facebookToken: String, completion: @escaping (MBAResult<User>) -> Void)
     func loginWithEmail(email: String, password: String, completion: @escaping (MBAResult<User>) -> Void)
     func loginWithGoogle(googleToken: String, completion: @escaping (MBAResult<User>) -> Void)
@@ -51,8 +51,24 @@ class AuthModelImpl: BaseModel, AuthModel {
         }
     }
     
-    func signUpWithGoogle(googleToken: String, completion: @escaping (MBAResult<User>) -> Void) {
-        
+    func signUpWithGoogle(name: String, email: String, phone: String, password: String, googleToken: String, completion: @escaping (MBAResult<User>) -> Void) {
+        networkAgent.signUpWithGoogle(name: name, email: email, phone: phone, password: password, googleToken: googleToken){ [weak self] result in
+            switch result {
+            case .success(let response):
+                // Set to User Default
+                let defaults = UserDefaults.standard
+                defaults.set(response.token, forKey: "user-token")
+                if let user = response.data {
+                    self?.userRepo.saveUser(user: user)
+                    completion(.success(user))
+                } else {
+                    completion(.failure("User not found"))
+                }
+            case .failure(let error):
+                completion(.failure(error))
+            }
+            
+        }
     }
     
     func signUpWithFacebook(facebookToken: String, completion: @escaping (MBAResult<User>) -> Void) {
@@ -79,7 +95,22 @@ class AuthModelImpl: BaseModel, AuthModel {
     }
     
     func loginWithGoogle(googleToken: String, completion: @escaping (MBAResult<User>) -> Void) {
-        
+        networkAgent.loginWithGoogle(googleToken: googleToken){[weak self] result in
+            switch result {
+            case .success(let response):
+                // Set to User Default
+                let defaults = UserDefaults.standard
+                defaults.set(response.token, forKey: "user-token")
+                if let user = response.data {
+                    self?.userRepo.saveUser(user: user)
+                    completion(.success(user))
+                } else {
+                    completion(.failure("User not found"))
+                }
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
     }
     
     func loginWithFacebook(facebookToken: String, completion: @escaping (MBAResult<User>) -> Void) {

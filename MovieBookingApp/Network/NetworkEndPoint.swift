@@ -11,6 +11,7 @@ import Alamofire
 enum NetworkEndPoint: URLConvertible {
     case signUp
     case signIn
+    case signInGoogle
     case logout
     case profile
     case movie(status: String, take: Int)
@@ -38,6 +39,8 @@ enum NetworkEndPoint: URLConvertible {
             return "/api/v1/register"
         case .signIn:
             return "/api/v1/email-login"
+        case .signInGoogle:
+            return "/api/v1/google-login"
         case .logout:
             return "/api/v1/logout"
         case .profile:

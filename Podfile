@@ -12,4 +12,5 @@ target 'MovieBookingApp' do
   pod 'Alamofire', '~> 5.5'
   pod 'SDWebImage', '~> 5.0'
   pod 'RealmSwift'
+  pod 'GoogleSignIn'
 end

@@ -11,7 +11,7 @@ protocol NetworkAgentProtocol {
     
     // MARK: - Authorization
     func signUpWithEmail(name: String, email: String, phone: String, password: String, completion: @escaping (MBAResult<BaseResponse<User>>) -> Void)
-    func signUpWithGoogle(googleToken: String, completion: @escaping (MBAResult<BaseResponse<User>>) -> Void)
+    func signUpWithGoogle(name: String, email: String, phone: String, password: String, googleToken: String, completion: @escaping (MBAResult<BaseResponse<User>>) -> Void)
     func signUpWithFacebook(facebookToken: String, completion: @escaping (MBAResult<BaseResponse<User>>) -> Void)
     func loginWithEmail(email: String, password: String, completion: @escaping (MBAResult<BaseResponse<User>>) -> Void)
     func loginWithGoogle(googleToken: String, completion: @escaping (MBAResult<BaseResponse<User>>) -> Void)

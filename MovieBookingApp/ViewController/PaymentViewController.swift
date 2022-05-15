@@ -79,6 +79,7 @@ class PaymentViewController: UIViewController{
                 switch result {
                 case .success(let ticket):
                     self?.bookingModel.clearBookingInfo(movieId: movieId)
+                    //Dimiss loading
                     self?.presentedViewController?.dismiss(animated: false) {
                         self?.navigateToTicketViewController(ticket: ticket)
                     }
@@ -89,28 +90,6 @@ class PaymentViewController: UIViewController{
                 }
             }
         }
-//        let cinemaDayTimeSlotId = bookingModel.getbookingInfo()
-//        let row = MovieTicketVo.movieSeat?.getRows().joined(separator: ",") ?? ""
-//        let seatNumbers = MovieTicketVo.movieSeat?.getSeatNumbers().joined(separator: ",") ?? ""
-//        let bookingDate = MovieTicketVo.movieTime?.getBookingDate() ?? ""
-//        let totalPrice = MovieTicketVo.totalCharges()
-//        let movieId = MovieTicketVo.movie?.id ?? 0
-//        let cardId = chooseCard?.id ?? 0
-//        let cinemaId = MovieTicketVo.movieTime?.getCinemaId() ?? 0
-//        let snacks = MovieTicketVo.snackVo?.getSnackRequest() ?? []
-//        // Call Checkout API
-//
-////        debugPrint("cinemaDayTimeSlotId = \(cinemaDayTimeSlotId)")
-////        debugPrint("row = \(row)")
-////        debugPrint("seatNumbers = \(seatNumbers)")
-////        debugPrint("bookingDate = \(bookingDate)")
-////        debugPrint("totalPrice = \(totalPrice)")
-////        debugPrint("movieId = \(movieId)")
-////        debugPrint("paymentCardId = \(cardId)")
-////        debugPrint("cinemaId = \(cinemaId)")
-////        debugPrint("snacks = \(snacks)")
-//        //        navigateToTicketViewController()
-        
     }
     
     

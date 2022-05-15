@@ -25,22 +25,22 @@ class BookingInfoModelImpl: BookingInfoModel {
     private init(){}
     private let repo: BookingInfoRepository = BookingInfoRepositoryImpl.shared
     
-    private static var booking: BookingInfoObject? = nil
+    private var booking: BookingInfoObject? = nil
     
     func getbookingInfo() -> BookingInfoObject? {
-        return BookingInfoModelImpl.booking
+        return booking
     }
     
     func createBookingInfo(_ movie: Movie) {
         repo.createBookingInfo(movie: movie) { info in
-            BookingInfoModelImpl.booking = info
+            self.booking = info
         }
     }
     
     func setTimeSlot(cinema: Cinema, cinemaDayTimeSlot: Timeslot, date: Date) {
         if let booking = getbookingInfo() {
             repo.setTimeSlot(movieId: booking.movieId, cinema: cinema, cinemaDayTimeSlot: cinemaDayTimeSlot, date: date) { info in
-                BookingInfoModelImpl.booking = info
+                self.booking = info
             }
         }
     }
@@ -48,7 +48,7 @@ class BookingInfoModelImpl: BookingInfoModel {
     func setSeats(seats: [Seat]) {
         if let booking = getbookingInfo() {
             repo.setSeats(movieId: booking.movieId, timeSlotId: booking.cinemaDayTimeSlot?.cinemaDayTimeslotID ?? 0, date: booking.date!, seats: seats) { info in
-                BookingInfoModelImpl.booking = info
+                self.booking = info
             }
         }
     }
@@ -56,7 +56,7 @@ class BookingInfoModelImpl: BookingInfoModel {
     func setSnacks(snacks: [Snack : Int]) {
         if let booking = getbookingInfo() {
             repo.setSnacks(movieId: booking.movieId, snacks: snacks){ info in
-                BookingInfoModelImpl.booking = info
+                self.booking = info
             }
         }
     }
@@ -64,7 +64,7 @@ class BookingInfoModelImpl: BookingInfoModel {
     func setPaymentCard(card: PaymentCard) {
         if let booking = getbookingInfo() {
             repo.setPaymentCard(movieId: booking.movieId, paymentCard: card){ info in
-                BookingInfoModelImpl.booking = info
+                self.booking = info
             }
         }
     }
@@ -72,7 +72,7 @@ class BookingInfoModelImpl: BookingInfoModel {
     func clearSeats() {
         if let booking = getbookingInfo() {
             repo.clearSeats(movieId: booking.movieId){ info in
-                BookingInfoModelImpl.booking = info
+                self.booking = info
             }
         }
     }
@@ -80,20 +80,20 @@ class BookingInfoModelImpl: BookingInfoModel {
     func clearSnacks() {
         if let booking = getbookingInfo(){
             repo.clearSnacks(movieId: booking.movieId){ info in
-                BookingInfoModelImpl.booking = info
+                self.booking = info
             }
         }
     }
     
     func clearBookingInfo(movieId: Int) {
         repo.clearBookingInfo(movieId: movieId) {
-            BookingInfoModelImpl.booking = nil
+            self.booking = nil
         }   
     }
     
     func clearAllBookingInfo() {
         repo.clearAllBookingInfo {
-            BookingInfoModelImpl.booking = nil
+            self.booking = nil
         }
     }
 }
