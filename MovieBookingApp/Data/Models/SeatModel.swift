@@ -19,6 +19,7 @@ class SeatModelImpl: BaseModel, SeatModel {
     
     func getSeat(timeSlotId: Int, date: String, completion: @escaping (MBAResult<[[Seat]]>) -> Void) {
         seatRepo.getSeats(timeSlotId: timeSlotId, date: date) { seats in
+            debugPrint(seats.count)
             completion(.success(SeatUtils.to2DArraySeats(seats)))
         }
         if let token = UserModelImpl.userToken {

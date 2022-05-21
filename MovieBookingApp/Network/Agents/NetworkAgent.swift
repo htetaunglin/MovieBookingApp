@@ -156,7 +156,7 @@ class NetworkAgent: NetworkAgentProtocol {
     
     func logout(token: String, completion: @escaping (MBAResult<BaseResponse<NullCodable?>>) -> Void) {
         let headers = HTTPHeaders([
-            HTTPHeader(name: "Authorization", value: "Bearer \(token)")
+            .authorization(bearerToken: token)
         ])
         AF.request(NetworkEndPoint.logout, method: .post, headers: headers).decodable(completion: completion)
     }
@@ -164,7 +164,7 @@ class NetworkAgent: NetworkAgentProtocol {
     
     func getProfile(token: String, completion: @escaping (MBAResult<BaseResponse<User>>) -> Void) {
         let headers = HTTPHeaders([
-            HTTPHeader(name: "Authorization", value: "Bearer \(token)")
+            .authorization(bearerToken: token)
         ])
         AF.request(NetworkEndPoint.profile, headers: headers).decodable(completion: completion)
     }
@@ -183,35 +183,35 @@ class NetworkAgent: NetworkAgentProtocol {
     
     func getTimeSlots(token: String, movieId: Int, date: String, completion: @escaping (MBAResult<BaseResponse<[CinemaTimeSlot]>>) -> Void) {
         let headers = HTTPHeaders([
-            HTTPHeader(name: "Authorization", value: "Bearer \(token)")
+            .authorization(bearerToken: token)
         ])
         AF.request(NetworkEndPoint.timeslot(movieId: movieId, date: date), headers: headers).decodable(completion: completion)
     }
     
     func getSeats(token: String, timeSlotId: Int, date: String, completion: @escaping (MBAResult<BaseResponse<[[Seat]]>>) -> Void) {
         let headers = HTTPHeaders([
-            HTTPHeader(name: "Authorization", value: "Bearer \(token)")
+            .authorization(bearerToken: token)
         ])
         AF.request(NetworkEndPoint.seat(timeSlotId: timeSlotId, date: date), headers: headers).decodable(completion: completion)
     }
     
     func getSnacks(token: String, completion: @escaping (MBAResult<BaseResponse<[Snack]>>) -> Void) {
         let headers = HTTPHeaders([
-            HTTPHeader(name: "Authorization", value: "Bearer \(token)")
+            .authorization(bearerToken: token)
         ])
         AF.request(NetworkEndPoint.snacks, headers: headers).decodable(completion: completion)
     }
     
     func getPaymentMethod(token: String, completion: @escaping (MBAResult<BaseResponse<[PaymentMethod]>>) -> Void) {
         let headers = HTTPHeaders([
-            HTTPHeader(name: "Authorization", value: "Bearer \(token)")
+            .authorization(bearerToken: token)
         ])
         AF.request(NetworkEndPoint.paymentMethod, headers: headers).decodable(completion: completion)
     }
     
     func createPaymentCard(token: String, cardNumber: String, holder: String, expire: String, cvc: String, completion: @escaping (MBAResult<BaseResponse<[PaymentCard]>>) -> Void) {
         let headers = HTTPHeaders([
-            HTTPHeader(name: "Authorization", value: "Bearer \(token)")
+            .authorization(bearerToken: token)
         ])
         let param = [
             "card_number": cardNumber,
@@ -229,7 +229,7 @@ class NetworkAgent: NetworkAgentProtocol {
     
     func checkout(token: String, cinemaDayTimeSlotId: Int, row: String, seatNumber: String, bookingDate: String, totalPrice: Double, movieId: Int, cardId: Int, cinemaId: Int, snacks: [SnackRequest], completion: @escaping (MBAResult<BaseResponse<MovieTicket>>) -> Void) {
         let headers = HTTPHeaders([
-            HTTPHeader(name: "Authorization", value: "Bearer \(token)"),
+            .authorization(bearerToken: token),
         ])
         let ticket = TicketRequest(cinemaDayTimeslotID: cinemaDayTimeSlotId, row: row, seatNumber: seatNumber, bookingDate: bookingDate, totalPrice: totalPrice, movieID: movieId, cardID: cardId, cinemaID: cinemaId, snacks: snacks)
         AF.request(NetworkEndPoint.checkout,

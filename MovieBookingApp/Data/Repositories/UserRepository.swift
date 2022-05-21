@@ -41,7 +41,7 @@ class UserRepositoryImpl: BaseRepository, UserRepository {
             try realmDB.write {
                 let objects = paymentCards.map{ $0.toPaymentCardObject() }
                 realmDB.add(objects, update: .modified)
-                user?.paymentCard.append(objectsIn: paymentCards.map{ $0.toPaymentCardObject() })
+                user?.paymentCard.append(objectsIn: objects)
             }
         } catch {
             debugPrint(error.localizedDescription)

@@ -33,6 +33,7 @@ class SeatRepositoryImpl: BaseRepository, SeatRepository {
     
     func getSeats(timeSlotId: Int, date: String, completion: @escaping ([Seat]) -> Void) {
         let object = realmDB.object(ofType: TimeSlotObject.self, forPrimaryKey: timeSlotId)
+        debugPrint(object?.seats);
         completion(object?.seats.map{ $0.toSeat() } ?? [])
     }
     

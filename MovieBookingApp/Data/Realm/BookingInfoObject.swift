@@ -34,6 +34,8 @@ class BookingSnackObject: Object {
     var snack: SnackObject?
     @Persisted
     var quantity: Int
+    @Persisted(originProperty: "snacks")
+    var bookingInfo: LinkingObjects<BookingInfoObject>
 }
 
 extension BookingInfoObject {

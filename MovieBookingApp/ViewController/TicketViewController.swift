@@ -58,7 +58,8 @@ class TicketViewController: UIViewController{
             lblRow.text = ticket.row
             lblSeat.text = ticket.seat
             if let path = ticket.qrCode {
-                imgBarcode.sd_setImage(with: URL(string: "\(baseURL)\(path)"))
+                imgBarcode.sd_setImage(with: URL(string: "\(baseURL)/\(path)"))
+                debugPrint("\(baseURL)/\(path)")
             }
             lblPrice.text = ticket.total
             
