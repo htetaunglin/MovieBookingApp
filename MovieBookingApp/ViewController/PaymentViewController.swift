@@ -65,14 +65,14 @@ class PaymentViewController: UIViewController{
         
         if let booking = bookingModel.getbookingInfo() {
             let cinemaDayTimeSlotId : Int = booking.cinemaDayTimeSlot?.cinemaDayTimeslotID ?? 0
-            let row: String = Array(Set(booking.seats.map{ $0.symbol })).joined(separator: ",")
-            let seatNumbers: String = Array(Set(booking.seats.map{ $0.seatName })).joined(separator: ",")
+            let row: String = Array(Set(booking.seats?.map{ $0.symbol } ?? [])).joined(separator: ",")
+            let seatNumbers: String = Array(Set(booking.seats?.map{ $0.seatName } ?? [])).joined(separator: ",")
             let bookingDate: String = booking.date?.toFormat(format: "yyyy-MM-dd") ?? ""
             let totalPrice: Double = 0
-            let movieId: Int = booking.movieId
+            let movieId: Int = booking.movie?.id ?? 0
             let cardId: Int = chooseCard?.id ?? 0
             let cinemaId: Int = booking.cinema?.id ?? 0
-            let snacks: [SnackRequest] = booking.snacks.map{ $0.toSnackRequest() }
+            let snacks: [SnackRequest] = booking.snacks?.map{ $0.toSnackRequest() } ?? []
         
             showLoadingAlert()
             ticketModel.checkout(cinemaDayTimeSlotId: cinemaDayTimeSlotId, row: row, seatNumber: seatNumbers, bookingDate: bookingDate, totalPrice: totalPrice, movieId: movieId, cardId: cardId, cinemaId: cinemaId, snacks: snacks){[weak self] result in

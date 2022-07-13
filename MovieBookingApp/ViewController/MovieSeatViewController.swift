@@ -19,8 +19,7 @@ class MovieSeatViewController: UIViewController{
     @IBOutlet weak var lblCinema: UILabel!
     @IBOutlet weak var lblTime: UILabel!
     
-    let seatModel: SeatModel = SeatModelImpl.shared
-    let bookingModel: BookingInfoModel = BookingInfoModelImpl.shared
+    var presenter: MovieSeatPresenterProtocol!
     
     var seats: [Seat] = [] {
         didSet {
@@ -31,7 +30,7 @@ class MovieSeatViewController: UIViewController{
     var selectedSeats: [Seat] = [] {
         didSet {
             lblSelectedCount.text = "\(selectedSeats.count)"
-            
+
             var seatMap: [String: [Seat]] = [String: [Seat]]()
             selectedSeats.forEach { seat in
                 seatMap[seat.symbol] = selectedSeats.filter{ $0.symbol == seat.symbol }
@@ -40,7 +39,7 @@ class MovieSeatViewController: UIViewController{
                 let numbers = value.map{ $0.seatName.split(separator: "-").last?.description ?? "" }.joined(separator: ", ")
                 return "\(row) Row/ \(numbers)"
             }.joined(separator: "\n")
-            
+
             let totalCharges = selectedSeats.reduce(0) { previous, seat in
                 return previous + (seat.price ?? 0)
             }
@@ -58,10 +57,15 @@ class MovieSeatViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpPresenter()
         registerCollectionView()
         setDataSourceAndDelegate()
         fetchSeats()
         dataBind()
+    }
+    
+    func setUpPresenter(){
+        presenter = MovieSeatPresenter(viewPresenter: self, seatModel: SeatModelImpl.shared, bookingModel: BookingInfoModelImpl.shared)
     }
     
     func setDataSourceAndDelegate(){
@@ -74,7 +78,7 @@ class MovieSeatViewController: UIViewController{
     }
     
     func dataBind(){
-        if let obj = bookingModel.getbookingInfo() {
+        if let obj = presenter.bookingInfo {
             lblMovieName.text = obj.movie?.originalTitle ?? ""
             let movieTime =  obj.cinemaDayTimeSlot?.startTime ?? ""
             let time = obj.date?.toFormat(format: "EEEE, dd MMM") ?? ""
@@ -84,30 +88,18 @@ class MovieSeatViewController: UIViewController{
     }
     
     func fetchSeats(){
-        
-        seatModel.getSeat(timeSlotId: bookingModel.getbookingInfo()?.cinemaDayTimeSlot?.cinemaDayTimeslotID ?? 0, date: bookingModel.getbookingInfo()?.date?.toFormat(format: "yyyy-MM-dd") ?? ""){[weak self] result in
-            switch result {
-            case .success(let seats):
-                self?.seats = SeatUtils.to1DArraySeats(seats)
-                if !seats.isEmpty {
-                    self?.columnCount = seats.first?.count ?? 0
-                    self?.rowCount = seats.count
-                }
-            case .failure(let error):
-                debugPrint(error)
-            }
-        }
+        presenter.fetchSeats()
     }
     
     @IBAction func onClickBuy(_ sender: Any) {
-        if selectedSeats.count != 0 {
-            bookingModel.setSeats(seats: selectedSeats)
-            navigateToSnackViewController()
+        if presenter.selectedSeats.count != 0 {
+            presenter.setSelectedSeatToBooking()
         }
     }
     
     deinit {
-        bookingModel.clearSeats()
+//        bookingModel.clearSeats()
+        presenter.clearSeats()
     }
 }
 
@@ -120,7 +112,7 @@ extension MovieSeatViewController: UICollectionViewDataSource{
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: MovieSeatCollectionViewCell.self), for: indexPath) as? MovieSeatCollectionViewCell else {
             return UICollectionViewCell()
         }
-        let isSelected = selectedSeats.contains { seat in seats[indexPath.row].seatName
+        let isSelected = presenter.selectedSeats.contains { seat in seats[indexPath.row].seatName
             == seat.seatName }
         cell.bindData(seat: seats[indexPath.row], isSelected: isSelected)
         return cell
@@ -139,15 +131,52 @@ extension MovieSeatViewController: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let select = seats[indexPath.row]
         if select.isMovieSeatAvailable() {
-            let isSelected = selectedSeats.contains { seat in select.seatName
+            let isSelected = presenter.selectedSeats.contains { seat in select.seatName
                 == seat.seatName }
             if isSelected {
                 //Remove
-                selectedSeats.removeAll{ seat in seat.seatName == select.seatName }
+                presenter.unselectSeat(selectedSeat: select)
             } else {
                 //Add
-                selectedSeats.append(select)
+                presenter.selectSeat(seat: select)
             }
         }
+    }
+}
+
+
+extension MovieSeatViewController: MovieSeatViewPresenter {
+    
+    func onChangeSelectedSeat(seat: Seat, isAppend: Bool) {
+        lblSelectedCount.text = "\(presenter.selectedSeats.count)"
+        
+        var seatMap: [String: [Seat]] = [String: [Seat]]()
+        presenter.selectedSeats.forEach { seat in
+            seatMap[seat.symbol] = presenter.selectedSeats.filter{ $0.symbol == seat.symbol }
+        }
+        lblSelectedSeat.text = seatMap.map{ row, value in
+            let numbers = value.map{ $0.seatName.split(separator: "-").last?.description ?? "" }.joined(separator: ", ")
+            return "\(row) Row/ \(numbers)"
+        }.joined(separator: "\n")
+        
+        let totalCharges = presenter.totalSelectedCharges
+        btnBuyTicket.setTitle("Buy Ticket for $\(totalCharges)", for: .normal)
+        collectionViewSeat.reloadData()
+    }
+    
+    func onGetSeatData(data: [[Seat]]) {
+        self.seats = SeatUtils.to1DArraySeats(data)
+        if !seats.isEmpty {
+            self.columnCount = data.first?.count ?? 0
+            self.rowCount = seats.count
+        }
+    }
+    
+    func onFailedGetSeat(error: String) {
+        debugPrint(error)
+    }
+    
+    func onAddSelectedSeatsToBooking() {
+        navigateToSnackViewController()
     }
 }

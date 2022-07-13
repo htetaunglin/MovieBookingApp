@@ -49,7 +49,7 @@ class MovieTimeViewController: UIViewController{
         didSet {
             // fetch network
             if let date = chooseDate {
-                fetchTimeSlots(movieId:bookingInfoModel.getbookingInfo()?.movieId ?? 0, date: date.toFormat(format: "yyyy-MM-dd"))
+                fetchTimeSlots(movieId:bookingInfoModel.getbookingInfo()?.movie?.id ?? 0, date: date.toFormat(format: "yyyy-MM-dd"))
             }
             collectionViewDays.reloadData()
         }

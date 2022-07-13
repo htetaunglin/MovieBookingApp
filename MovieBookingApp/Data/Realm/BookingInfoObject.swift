@@ -51,4 +51,22 @@ extension BookingSnackObject {
     func toSnackRequest() -> SnackRequest {
         SnackRequest(id: snack?.id, quantity: quantity)
     }
+    
+    func toBookingSnack() -> BookingSnack {
+        return BookingSnack(snackId: snackId, snack: snack?.toSnack(), quantity: quantity)
+    }
+}
+
+extension BookingInfoObject {
+    func toBookingInfo() -> BookingInfo {
+        let bookingInfo = BookingInfo()
+        bookingInfo.movie = self.movie?.toMovie()
+        bookingInfo.cinemaDayTimeSlot = self.cinemaDayTimeSlot?.toTimeSlot()
+        bookingInfo.seats = self.seats.map{ $0.toSeat() }
+        bookingInfo.date = self.date
+        bookingInfo.card = self.card?.toPaymentCard()
+        bookingInfo.cinema = self.cinema?.toCinema()
+        bookingInfo.snacks = self.snacks.map{ $0.toBookingSnack() }
+        return bookingInfo
+    }
 }
