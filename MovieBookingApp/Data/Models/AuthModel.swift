@@ -76,6 +76,14 @@ class AuthModelImpl: BaseModel, AuthModel {
     }
     
     func loginWithEmail(email: String, password: String, completion: @escaping (MBAResult<User>) -> Void) {
+        if email.isEmpty {
+            completion(.failure("Please input email"))
+            return
+        }
+        if password.isEmpty {
+            completion(.failure("Please input password"))
+            return
+        }
         networkAgent.loginWithEmail(email: email, password: password){[weak self] result in
             switch result {
             case .success(let response):

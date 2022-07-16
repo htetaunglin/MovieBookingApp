@@ -63,9 +63,9 @@
 		9982389427C94F7D00CDFBF5 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9982389327C94F7D00CDFBF5 /* PaymentViewController.swift */; };
 		9982389627C9544800CDFBF5 /* AddNewCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9982389527C9544800CDFBF5 /* AddNewCardViewController.swift */; };
 		9985EE07287EFABB00983D0A /* seat_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9985EE06287EFABB00983D0A /* seat_data.json */; };
-		9985EE0A287EFCD300983D0A /* SeatTestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9985EE09287EFCD300983D0A /* SeatTestModel.swift */; };
+		9985EE0A287EFCD300983D0A /* SeatMockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9985EE09287EFCD300983D0A /* SeatMockModel.swift */; };
 		9985EE0C287EFD3D00983D0A /* SeatMockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9985EE0B287EFD3D00983D0A /* SeatMockData.swift */; };
-		9985EE13287F09FE00983D0A /* BookingInfoTestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9985EE12287F09FE00983D0A /* BookingInfoTestModel.swift */; };
+		9985EE13287F09FE00983D0A /* BookingInfoMockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9985EE12287F09FE00983D0A /* BookingInfoMockModel.swift */; };
 		9985EE15287F134000983D0A /* BookingInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9985EE14287F134000983D0A /* BookingInfoResponse.swift */; };
 		9985EE17287F192C00983D0A /* BookingSnack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9985EE16287F192C00983D0A /* BookingSnack.swift */; };
 		9996523927C9FC62008190BC /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9996523827C9FC62008190BC /* Router.swift */; };
@@ -86,6 +86,8 @@
 		99BDBE8527BD5CF900AAF1A5 /* MovieTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BDBE8427BD5CF900AAF1A5 /* MovieTimeViewController.swift */; };
 		99E213D62822F8BA0097A50E /* TimeSlotResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E213D52822F8BA0097A50E /* TimeSlotResponse.swift */; };
 		99E213D82822FB930097A50E /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E213D72822FB930097A50E /* Date+Extension.swift */; };
+		99E7627928805B4A00F3204A /* MovieBookingAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E7627828805B4A00F3204A /* MovieBookingAppUITests.swift */; };
+		99E7627B28805B4A00F3204A /* MovieBookingAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E7627A28805B4A00F3204A /* MovieBookingAppUITestsLaunchTests.swift */; };
 		99E9CEAD2812F8A000794996 /* NetworkEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E9CEAC2812F8A000794996 /* NetworkEndPoint.swift */; };
 		99E9CEAF2812F8C200794996 /* NetworkAgentProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E9CEAE2812F8C200794996 /* NetworkAgentProtocols.swift */; };
 		99E9CEB22813C63800794996 /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E9CEB12813C63800794996 /* StringConstants.swift */; };
@@ -118,6 +120,13 @@
 
 /* Begin PBXContainerItemProxy section */
 		99349E88287DF52600A8BE9F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 992CC69B27BA236500D991A9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 992CC6A227BA236500D991A9;
+			remoteInfo = MovieBookingApp;
+		};
+		99E7627C28805B4A00F3204A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 992CC69B27BA236500D991A9 /* Project object */;
 			proxyType = 1;
@@ -186,9 +195,9 @@
 		9982389327C94F7D00CDFBF5 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		9982389527C9544800CDFBF5 /* AddNewCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewCardViewController.swift; sourceTree = "<group>"; };
 		9985EE06287EFABB00983D0A /* seat_data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = seat_data.json; sourceTree = "<group>"; };
-		9985EE09287EFCD300983D0A /* SeatTestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatTestModel.swift; sourceTree = "<group>"; };
+		9985EE09287EFCD300983D0A /* SeatMockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatMockModel.swift; sourceTree = "<group>"; };
 		9985EE0B287EFD3D00983D0A /* SeatMockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatMockData.swift; sourceTree = "<group>"; };
-		9985EE12287F09FE00983D0A /* BookingInfoTestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingInfoTestModel.swift; sourceTree = "<group>"; };
+		9985EE12287F09FE00983D0A /* BookingInfoMockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingInfoMockModel.swift; sourceTree = "<group>"; };
 		9985EE14287F134000983D0A /* BookingInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingInfoResponse.swift; sourceTree = "<group>"; };
 		9985EE16287F192C00983D0A /* BookingSnack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingSnack.swift; sourceTree = "<group>"; };
 		9996523827C9FC62008190BC /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -209,6 +218,9 @@
 		99BDBE8427BD5CF900AAF1A5 /* MovieTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTimeViewController.swift; sourceTree = "<group>"; };
 		99E213D52822F8BA0097A50E /* TimeSlotResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSlotResponse.swift; sourceTree = "<group>"; };
 		99E213D72822FB930097A50E /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		99E7627628805B4A00F3204A /* MovieBookingAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieBookingAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		99E7627828805B4A00F3204A /* MovieBookingAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieBookingAppUITests.swift; sourceTree = "<group>"; };
+		99E7627A28805B4A00F3204A /* MovieBookingAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieBookingAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		99E9CEAC2812F8A000794996 /* NetworkEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEndPoint.swift; sourceTree = "<group>"; };
 		99E9CEAE2812F8C200794996 /* NetworkAgentProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAgentProtocols.swift; sourceTree = "<group>"; };
 		99E9CEB12813C63800794996 /* StringConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
@@ -251,6 +263,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		99349E81287DF52600A8BE9F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		99E7627328805B4A00F3204A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -317,6 +336,7 @@
 			children = (
 				992CC6A527BA236500D991A9 /* MovieBookingApp */,
 				99349E85287DF52600A8BE9F /* MovieBookingAppTests */,
+				99E7627728805B4A00F3204A /* MovieBookingAppUITests */,
 				992CC6A427BA236500D991A9 /* Products */,
 				5BAC718995F2E1B0F23E6932 /* Pods */,
 				A7F8EB8B51F2895CB3D8121C /* Frameworks */,
@@ -328,6 +348,7 @@
 			children = (
 				992CC6A327BA236500D991A9 /* MovieBookingApp.app */,
 				99349E84287DF52600A8BE9F /* MovieBookingAppTests.xctest */,
+				99E7627628805B4A00F3204A /* MovieBookingAppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -459,8 +480,8 @@
 		9985EE08287EFCC400983D0A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				9985EE09287EFCD300983D0A /* SeatTestModel.swift */,
-				9985EE12287F09FE00983D0A /* BookingInfoTestModel.swift */,
+				9985EE09287EFCD300983D0A /* SeatMockModel.swift */,
+				9985EE12287F09FE00983D0A /* BookingInfoMockModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -517,6 +538,15 @@
 				99353422281A659100CD1813 /* DrawerViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		99E7627728805B4A00F3204A /* MovieBookingAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				99E7627828805B4A00F3204A /* MovieBookingAppUITests.swift */,
+				99E7627A28805B4A00F3204A /* MovieBookingAppUITestsLaunchTests.swift */,
+			);
+			path = MovieBookingAppUITests;
 			sourceTree = "<group>";
 		};
 		99E9CEA92812F81C00794996 /* Network */ = {
@@ -682,6 +712,24 @@
 			productReference = 99349E84287DF52600A8BE9F /* MovieBookingAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		99E7627528805B4A00F3204A /* MovieBookingAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 99E7627E28805B4A00F3204A /* Build configuration list for PBXNativeTarget "MovieBookingAppUITests" */;
+			buildPhases = (
+				99E7627228805B4A00F3204A /* Sources */,
+				99E7627328805B4A00F3204A /* Frameworks */,
+				99E7627428805B4A00F3204A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				99E7627D28805B4A00F3204A /* PBXTargetDependency */,
+			);
+			name = MovieBookingAppUITests;
+			productName = MovieBookingAppUITests;
+			productReference = 99E7627628805B4A00F3204A /* MovieBookingAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -696,6 +744,10 @@
 						CreatedOnToolsVersion = 13.2.1;
 					};
 					99349E83287DF52600A8BE9F = {
+						CreatedOnToolsVersion = 13.3.1;
+						TestTargetID = 992CC6A227BA236500D991A9;
+					};
+					99E7627528805B4A00F3204A = {
 						CreatedOnToolsVersion = 13.3.1;
 						TestTargetID = 992CC6A227BA236500D991A9;
 					};
@@ -716,6 +768,7 @@
 			targets = (
 				992CC6A227BA236500D991A9 /* MovieBookingApp */,
 				99349E83287DF52600A8BE9F /* MovieBookingAppTests */,
+				99E7627528805B4A00F3204A /* MovieBookingAppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -746,6 +799,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9985EE07287EFABB00983D0A /* seat_data.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		99E7627428805B4A00F3204A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -893,10 +953,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				99349E8E287DF53C00A8BE9F /* SeatUnitTest.swift in Sources */,
-				9985EE13287F09FE00983D0A /* BookingInfoTestModel.swift in Sources */,
-				9985EE0A287EFCD300983D0A /* SeatTestModel.swift in Sources */,
+				9985EE13287F09FE00983D0A /* BookingInfoMockModel.swift in Sources */,
+				9985EE0A287EFCD300983D0A /* SeatMockModel.swift in Sources */,
 				9985EE0C287EFD3D00983D0A /* SeatMockData.swift in Sources */,
 				99349E87287DF52600A8BE9F /* MovieBookingAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		99E7627228805B4A00F3204A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99E7627928805B4A00F3204A /* MovieBookingAppUITests.swift in Sources */,
+				99E7627B28805B4A00F3204A /* MovieBookingAppUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -907,6 +976,11 @@
 			isa = PBXTargetDependency;
 			target = 992CC6A227BA236500D991A9 /* MovieBookingApp */;
 			targetProxy = 99349E88287DF52600A8BE9F /* PBXContainerItemProxy */;
+		};
+		99E7627D28805B4A00F3204A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 992CC6A227BA236500D991A9 /* MovieBookingApp */;
+			targetProxy = 99E7627C28805B4A00F3204A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1146,6 +1220,42 @@
 			};
 			name = Release;
 		};
+		99E7627F28805B4A00F3204A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 585W2U7TXZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.htetaunglin.MovieBookingAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MovieBookingApp;
+			};
+			name = Debug;
+		};
+		99E7628028805B4A00F3204A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 585W2U7TXZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.htetaunglin.MovieBookingAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MovieBookingApp;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1172,6 +1282,15 @@
 			buildConfigurations = (
 				99349E8B287DF52600A8BE9F /* Debug */,
 				99349E8C287DF52600A8BE9F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		99E7627E28805B4A00F3204A /* Build configuration list for PBXNativeTarget "MovieBookingAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				99E7627F28805B4A00F3204A /* Debug */,
+				99E7628028805B4A00F3204A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

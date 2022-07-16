@@ -13,7 +13,7 @@ enum AuthScreenTab{
     case signUp
 }
 
-class AuthViewController: UIViewController{
+class AuthViewController: UIViewController {
     @IBOutlet weak var textfieldEmail: UITextField!
     @IBOutlet weak var textfieldPassword: UITextField!
     @IBOutlet weak var textfieldName: UITextField!
@@ -54,7 +54,10 @@ class AuthViewController: UIViewController{
         textfieldPassword.addMyTextFieldStyle(insertPadding: true)
         textfieldName.addMyTextFieldStyle(insertPadding: true)
         textfieldPhone.addMyTextFieldStyle(insertPadding: true)
+        textfieldEmail.delegate = self
+        textfieldPassword.delegate = self
     }
+    
     private func decorateFacebookButton(){
         buttonFacebookLogin.setButtonBorder(color: UIColor.init(named: "movie_seat_available_color") ?? UIColor.gray)
         buttonGoogleLogin.setButtonBorder(color: UIColor.init(named: "movie_seat_available_color") ?? UIColor.gray)
@@ -177,5 +180,17 @@ class AuthViewController: UIViewController{
             }
             break
         }
+    }
+}
+
+extension AuthViewController: UITextFieldDelegate {
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
 }

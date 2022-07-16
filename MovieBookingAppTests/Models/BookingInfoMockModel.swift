@@ -8,9 +8,7 @@
 @testable import MovieBookingApp
 import Foundation
 
-class BookingInfoTestModelImpl: BookingInfoModel {
-    static let shared: BookingInfoModel = BookingInfoTestModelImpl()
-    private init(){}
+class BookingInfoMockModelImpl: BookingInfoModel {
     
     var bookingInfo: BookingInfo?
     
